@@ -81,8 +81,15 @@ console.log(!!"false");
 
 console.log(!!"0");
 
+var sample = "Hello, Codeup";
+sample += " students! ";
+console.log (sample);
+sample = sample.replace("students!", "class")
+console.log(sample);
+console.log(sample.indexOf("C"));
 
-
+console.log(sample.indexOf("Codeup"));
+console.log(sample.substring(7,13));
 let x = (3 + 5 + 1) * 3;
 
 console.log("the movies will cost "+ x +" dollars.")
