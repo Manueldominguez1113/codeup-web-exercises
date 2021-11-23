@@ -1,7 +1,7 @@
 var a = 1;
 var b = a++;
 var c = ++a;
-console.log("a is " + a +"  and b is " + b + " and C is " + c);
+console.log("a is " + a + "  and b is " + b + " and C is " + c);
 // what is the value of a, b, and c?
 
 
@@ -83,24 +83,28 @@ console.log(!!"0");
 
 var sample = "Hello, Codeup";
 sample += " students! ";
-console.log (sample);
+console.log(sample);
 sample = sample.replace("students!", "class")
 console.log(sample);
 console.log(sample.indexOf("C"));
 
 console.log(sample.indexOf("Codeup"));
-console.log(sample.substring(7,13));
+console.log(sample.substring(7, 13));
+
+
 let x = (3 + 5 + 1) * 3;
 
-console.log("the movies will cost "+ x +" dollars.")
+console.log("the movies will cost " + x + " dollars.")
+let google = 400
+let amazon = 380
+let facebook = 350
+let n = (google * 6) + (amazon * 4) + (facebook * 10)
 
-let n = (400 * 6) + (380 * 4) + (350 * 10)
-
-console.log("the contracts will total "+ n +" dollars this week.")
+console.log("the contracts will total " + n + " dollars this week.")
 
 function enrollment() {
 
-    let classStudents = 28, classSchedule = 3, studentSchedule = 3, room= false, schedule= false
+    let classStudents = 28, classSchedule = 3, studentSchedule = 3, room = false, schedule = false
 
     if (classStudents < 30) {
         room = true
@@ -114,13 +118,20 @@ function enrollment() {
     } else
         console.log("this student may not enroll in this course");
 }
-    enrollment();
+
+enrollment();
 
 
 function purchase() {
-    let cart = 3, offer = false, valid = false, premium = false, discount = false;
+    let cart = 3, offer = false, valid=true, premium = false, discount = false;
     if (cart >= 2) {
         offer = true
+    }
+    let expiration = new Date(2022, 0o5, 20);
+    let date = new Date();
+    if (date <= expiration) {
+        valid = true
+
     }
 
     if (valid && premium || offer === true) {
@@ -128,11 +139,11 @@ function purchase() {
     }
     if (discount === true) {
         return console.log("50% off!!")
-    }
-    else
+    } else
         return console.log("your current price is...")
 }
-    purchase();
+
+purchase();
 
 let username = '                               code up';
 let password = '     notastrongpassword';
@@ -140,15 +151,14 @@ username = username.trim();
 password = password.trim();
 
 let passwordCheck = true
-if (password.length <= 5){
-    passwordCheck= false
+if (password.length <= 5) {
+    passwordCheck = false
     console.log("password must be more than 5 characters")
-} else
-    if (password.indexOf(username) > 0) {
-        passwordcheck = false
-        console.log("password cannot include username");
-    }
-if(username.length > 20){
+} else if (password.indexOf(username) > 0) {
+    passwordcheck = false
+    console.log("password cannot include username");
+}
+if (username.length > 20) {
     console.log("username must not exceed 20 characters");
 }
 
