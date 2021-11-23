@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -53,10 +51,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 function isTwo(){
-console.log(random);
+    console.log(random);
     if (random === 2){
-    return true
-}    else return false
+        return true
+    }    else return false
 };
 console.log(isTwo(random));
 /**
@@ -71,23 +69,31 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 function calculateTip(tip,total){
-var tipAmount= total * tip ;
+    var tipAmount= total * tip ;
 
 
-    console.log("calculating tip: " + tip + " from total: " + total + " is: " +tipAmount.toFixed(2));
+    return "calculating tip: " + tip + " from total: " + total + " is: " +tipAmount.toFixed(2);
 
 }
-calculateTip(0.15, 20.00);
+console.log(calculateTip(0.15, 20.00));
 
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
- */
-prompt("please enter total", bill);
-/**
- * TODO:
+ **/
+
+var bill = prompt("Please enter you total bill", "ex:20.00");
+bill= parseFloat(bill);
+bill = bill.toFixed(2);
+
+var takeTip = prompt("Please enter the amount you wish to tip", "ex:0.10 is 10%");
+takeTip= parseFloat(takeTip);
+takeTip=takeTip.toFixed(2);
+
+alert("calculating tip...\n" + calculateTip(takeTip,bill));
+/** TODO:
  * Create a function named `applyDiscount`. This function should accept a price
  * (before a discount is applied), and a discount percentage (a number between 0
  * and 1). It should return the result of applying the discount to the original
@@ -100,3 +106,12 @@ prompt("please enter total", bill);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+function applyDiscount(price,discount){
+
+    var discountAmount = 1.00 - discount.toFixed(2) ,newTotal= price - (price * discount.toFixed(2));
+    console.log("with you got " + discount + " off,now you must pay: " + newTotal);
+
+
+}
+applyDiscount(100.00, 0.25);
