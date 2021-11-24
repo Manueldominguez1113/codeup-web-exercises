@@ -368,70 +368,82 @@ function areEqual(input1, input2) {
 }
 
 console.log(areEqual('24', 24));
+
 /*- Make a function named `areIdentical(input1, input2)` that returns if both
     inputs are same value and data type.*/
 function areIdentical(input1, input2) {
     return input1 === input2;
 }
 
-console.log("identicality(is that a word?) answer is here:  " +areIdentical('24', 24));
+console.log("identicality(is that a word?) answer is here:  " + areIdentical('24', 24));
 
 /*- Make a function named `not(input)` returns the input with a flipped boolean*/
-function not(input){
+function not(input) {
     return !input;
 }
+
 console.log(not(false));
+
 /*- Make a function named `notNot(input)` that the negation of the negation of the
 input.*/
-function notnot(input){
+function notnot(input) {
     return !!input;
 }
+
 console.log(notnot(false));
 
 /*- Make a function named `and(predicate1, predicate2)` that returns the logical
 operation of AND*/
 
-function and(predicate1, predicate2){
+function and(predicate1, predicate2) {
     return predicate1 && predicate2;
 }
+
 console.log(and(true, true));
 
 
 /*- Make a function named `or(predicate1, predicate2)` that returns the logical
 operation of OR*/
-function or(predicate1, predicate2){
+function or(predicate1, predicate2) {
     return predicate1 || predicate2;
 }
-console.log("or answer is   "+or(true, false));
+
+console.log("or answer is   " + or(true, false));
 
 
 /*- Write a function called `reverseString(string)` that reverses a string*/
-function reverseString(string){
+function reverseString(string) {
     return string.split("").reverse().join("");
 }
+
 console.log(reverseString("hi my name is what"))
+
 /*- Make a function named `absoluteValue(number)` that returns the absolute value
 of a number.*/
-function absoluteValue(number){
+function absoluteValue(number) {
     return Math.abs(number);
 }
+
 console.log(absoluteValue(-24));
+
 /*- Make a function named `rollDice(sides)` that takes in an argument containing
 the number of sides the die should have. Generate a random number between 1 up
 to and including the number of sides.*/
-function rolldice(sides){
-let roll =Math.floor(Math.random() * ( sides-1) +1);
-return roll
+function rolldice(sides) {
+    let roll = Math.floor(Math.random() * (sides - 1) + 1);
+    return roll
 }
-console.log("rolling die..." +rolldice(6));
+
+console.log("rolling die..." + rolldice(6));
 
 
 console.log("\n \n \t Simple Function Drills");
 
 /*1. Make a function called returnTwo() that returns the number 2 when called*/
-function returnTwo(){
+function returnTwo() {
     return 2
 }
+
 console.log(returnTwo());
 
 
@@ -439,15 +451,16 @@ console.log(returnTwo());
     1. Make a function called sayHowdy() which console.logs the string “Howdy!”
 
    Test this function by directly calling `sayHowdy()` */
-function sayHowdy(){
+function sayHowdy() {
     console.log("Howdy!");
 }
+
 sayHowdy();
 
 /*Remember this function does not need a defined return value
 
 1. Make a function called returnName() that returns the string of your name*/
-function returnName(name){
+function returnName(name) {
     return "hello " + name;
 
 }
@@ -455,17 +468,18 @@ function returnName(name){
 console.log(returnName("Alex"));
 
 
-
 /*    1. Make a function called addThree() which takes in a number input and returns the number plus 3.*/
-function addThree(n){
-return n+3;
+function addThree(n) {
+    return n + 3;
 }
+
 console.log(addThree(5));
 
- /*   1. Make a function called sayString() which returns the string input passed in.*/
-function sayString(string){
+/*   1. Make a function called sayString() which returns the string input passed in.*/
+function sayString(string) {
     return string
 }
+
 console.log(sayString('codeup'));
 
 
@@ -473,34 +487,78 @@ console.log("\n \n \tChallenge Function Drills");
 
 /*- Write a function called `identity(input)` that takes in an argument called
 input and returns that input.*/
-function identity(input){
+function identity(input) {
     return input
 }
+
 console.log(identity("hello"));
 
-- Write a function called `getRandomNumber(min, max)` that returns a random
-number between min and max values sent to that function call.
+/*- Write a function called `getRandomNumber(min, max)` that returns a random
+number between min and max values sent to that function call.*/
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+console.log(getRandomNumber(1, 100));
 
 /*- Write a function called `first(input)` that returns the first character in the
 provided string.*/
+function first(input) {
+    return input.charAt(0);
+}
+
+console.log(first("hello!"));
 
 /*- Write a function called `last(input)` that returns the last character of a
 string*/
+function last(input) {
+    let end = input.length - 1;
+    return input.charAt(end);
+}
+
+console.log(last("hello! the end"));
 
 /*- Write a function called `rest(input)` that returns everything but the first
 character of a string.*/
+function rest(input) {
+
+    return input.slice(1);
+}
+
+console.log(rest("hello! the end"));
+
 
 /*- Write a function called `reverse(input)` that takes a string and returns it
 reversed.*/
 
+function reverse(input) {
+    return input.split("").reverse().join("");
+}
+
+console.log(reverse("hi my name is what"));
+
 /*- Write a function called `isNumeric(input)` that takes an input and returns a
 boolean if the input is numeric.*/
+function isNumeric(input) {
+    return !isNaN(input);
+}
+
+console.log("this is the answer for is numeric   " + isNumeric(25));
 
 /*- Write a function called `count(input)` that takes in a string and returns the
 number of characters.*/
+function count(input) {
+    return input.length;
+}
+
+console.log("hello" + count("hello"));
 
 /*- Write a function called `add(a, b)` that returns the sum of a and b*/
+function add(a, b) {
+    return a + b;
+}
 
+console.log(add(1, 5));
 /*- Write a function called `subtract(a, b)` that return the difference between
 the two inputs.*/
 
@@ -525,30 +583,88 @@ console.log("\n\n \tEven More Function Bonuses")
 
 /*1. Create a function that will return how many whitespace characters are at the
 beginning and end of a string.*/
+function blankCheck(string) {
+    return string.match(/ /g).length
+}
+
+console.log(blankCheck("      hello      "))
 
 /*1. Create a function that takes in two string inputs.*/
+function twoStrings(input1, input2) {
+    /*- If the second string input is present in the first, return the first input
+    string with the second input string removed from it.*/
 
-/*- If the second string input is present in the first, return the first input
-string with the second input string removed from it.*/
+    if (input1.includes(input2)) {
+        console.log("found input2 in input1, returning first answer...   " + input1.replace(new RegExp(input2, 'g'), ""));
+    }
 
-/*- If the second string input is present multiple times in the first, the
-second string will only be removed where it first occurs in the first
-string.*/
+    /*- If the second string input is present multiple times in the first, the
+    second string will only be removed where it first occurs in the first
+    string.*/
+    if (input1.includes(input2)) {
+        console.log("second answer...   " + input1.replace(input2, ""));
+    }
 
-/*- If the second string input is not present in the first, return the first
-string as entered in the function.*/
+
+    /*- If the second string input is not present in the first, return the first
+    string as entered in the function.*/
+    else {
+        if (!input1.includes(input2)) {
+            console.log(input1);
+        }
+    }
+}
+
+twoStrings("hello i am alex hello hello", "hello");
 
 /*1. Create a function that takes in a string and returns true if the last letter
 is an "a" (otherwise, return false).*/
+function endsWithA(string) {
+    return string.endsWith('a')
+    /* i dont get what happened.. my intellij doesnt understand "endsWith" is a method, yet it still preforms the action
+           sooo...*/
+}
+
+console.log(endsWithA("hello all"))
 
 /*1. EXTRA CHALLENGE: create a function that will return how many whitespace
 characters are at the beginning of a string (hint: use regex).*/
+function startingWhiteSpaces(input) {
+    input = input.trimEnd();
+    return input.match(/\s/g).length;
+    /*satisfied with my result... but learning reg expressions makes me want to repeat these exercises,
+         i know i can do better...*/
+}
+
+console.log("       hello   has this many starting spaces   " + startingWhiteSpaces("       hello   "))
 
 /*1. Create a function `returnTrueMessage()` that returns the string "Hey, it's true!"*/
+function returnTrueMessage(input) {
+    if (input) {
+        return "Hey, it's true!";
+    } else return " it's not true..";
+}
 
 /*- Create a function `returnFalseMessage()` that returns the string "Hey, it's false!"*/
+function returnFalseMessage(input) {
+    if (!input) {
+        return "Hey, it's false!";
+    } else return " it's not false..";
+}
+
 /*- Create a function `returnMessage()` that takes in a function and returns the call to the function*/
+function returnMessage(message, input) {
+
+    return message(input);
+}
+
 /*- Experiement passing in different functions.*/
+console.log(returnMessage(returnTrueMessage, false));
+console.log(returnMessage(returnFalseMessage, false));
+console.log(returnMessage(returnTrueMessage, true));
+console.log(returnMessage(returnTrueMessage, true));
+console.log(returnMessage(rolldice, 6));
+/* above is soo simple but got me stuck for a nice 30 min. really enjoyed that*/
 
 /*1. Create a function, `willLoginUser()` that takes in a username string,
     password string, user age, a boolean indicating if they are an admin.
@@ -556,3 +672,27 @@ characters are at the beginning of a string (hint: use regex).*/
 password and the user is at least 18 years old. If the user is an admin,
     they do not have to be a certain age but the password must still not match
 the username. */
+function willLoginUser(username, password, age, admin) {
+
+    if (!password.includes(username)) {
+        switch (admin || age>=18) {
+            case true:
+                return true+ "  : congrats you made a profile!!";
+                break;
+
+            default:
+                    return false +"  : must be 18 or older to enter";
+                break;
+        }
+    } else{
+        if (password.includes(username)){
+            return false +"  : you must not have username in password";
+        }
+    }
+}
+
+console.log(willLoginUser("alex", "raven", 18, false))
+/*
+since password is utmost cannot match I made that the defining factor in my if statement, then did switch just to
+play with it. I wanted to be more in depth, but D.R.Y. right?
+exercises are fun. and I'm hungry for more knowledge*/
