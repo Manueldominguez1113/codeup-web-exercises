@@ -230,6 +230,27 @@ if (con = true) {
 
 /* REFRACTIONSSSS*/
 
-function numberFun(){}
 
-let con= confirm("would you like to input a number?");
+function numberFun(num) {
+    num = parseInt(num)
+    if (num % 2 == 0) {
+        alert("this number is even!");
+    } else {
+        alert("this number is odd!");
+    }
+    alert("this number plus 100 is: " + (num + 100))
+    if (num === Math.abs(num)) {
+        alert("this number is positive!");
+    } else {
+        alert("this number is negative!")
+    }
+}
+
+(function confirmation(con) {
+    con = confirm("would you like to input a number?");
+    if (con) {
+        let number = prompt("please input your number", "");
+        return numberFun(number);
+    } else {
+        return false;
+    }})();
