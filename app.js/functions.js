@@ -68,6 +68,7 @@ console.log(isTwo(random));
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
+
 function calculateTip(tip,total){
     var tipAmount= total * tip ;
 

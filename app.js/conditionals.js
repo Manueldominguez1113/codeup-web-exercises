@@ -21,6 +21,36 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+function analyzeColor() {
+    var color = prompt("please state your color in plain english", "")
+    switch (color) {
+        case "blue":
+            alert("blue is the color of the ocean!");
+            break;
+        case "red":
+            alert("red is the color of the inside of a good watermelon!");
+            break;
+        case "green":
+            alert("green is the color of the outside of a good watermelon!");
+            break;
+        case "yellow":
+            alert("yellow is the color of the sun! but dont look at it!");
+            break;
+        case "brown":
+            alert("brown is the color of mud!");
+            break;
+        case "black":
+            alert("black is the color of night!");
+            break;
+        case "white":
+            alert("white is the color of my socks!");
+            break;
+        default:
+            alert("hm. i cant really think of something that is that color right now..")
+            break;
+    }
+}
+
 
 // Don't change the next two lines!
 // These lines create two variables for you:
