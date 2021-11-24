@@ -17,39 +17,43 @@
  *  > analyzeColor('cyan') // returns "I don't know anything about cyan"
  *
  * You should use an if-else-if-else block to return different messages.
+ *                      i use if-else-if-else so often, i ran switch to be different
  *
+ *                      .. im back from a few lines under... realized it now.. i preformed both and figured ill keep it this
+ *                      way so comments make sense.
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-function analyzeColor() {
-    var color = prompt("please state your color in plain english", "")
+/*
+function analyzeColor(color) {
     switch (color) {
         case "blue":
-            alert("blue is the color of the ocean!");
+            return "blue is the color of the ocean!";
             break;
         case "red":
-            alert("red is the color of the inside of a good watermelon!");
+            return "red is the color of the inside of a good watermelon!";
             break;
         case "green":
-            alert("green is the color of the outside of a good watermelon!");
+            return "green is the color of the outside of a good watermelon!";
             break;
         case "yellow":
-            alert("yellow is the color of the sun! but dont look at it!");
+            return "yellow is the color of the sun! but dont look at it!";
             break;
         case "brown":
-            alert("brown is the color of mud!");
+            return "brown is the color of mud!";
             break;
         case "black":
-            alert("black is the color of night!");
+            return "black is the color of night!";
             break;
         case "white":
-            alert("white is the color of my socks!");
+            return "white is the color of my socks!";
             break;
         default:
-            alert("hm. i cant really think of something that is that color right now..")
+            return "hm. i cant really think of something that is "+color+" right now..";
             break;
     }
 }
+*/
 
 
 // Don't change the next two lines!
@@ -65,17 +69,62 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
+/*
+console.log(analyzeColor(randomColor));
+*/
+
+
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
+ * when you decided to preform the action before it was requested..
  */
+function analyzeColor(color) {
+    if (color == "blue") {
+        return "blue is the color of the ocean!";
+    } else {
+        if (color == "red") {
+            return "red is the color of the inside of a good watermelon!";
+        } else {
+            if (color == "green") {
+                return "green is the color of the outside of a good watermelon!";
+            } else {
+                if (color == "yellow") {
+                    return "yellow is the color of the sun! but dont look at it!";
+                } else {
+                    if (color == "brown") {
+                        return "brown is the color of mud!";
+                    } else {
+                        if (color == "black") {
+                            return "black is the color of night!";
+                        } else {
+                            if (color == "white") {
+                                return "white is the color of my socks!";
+                            } else {
+                                return "hm. i cant really think of something that is " + color + " right now..";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
+
+console.log(analyzeColor(randomColor));
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+/*let clr = prompt("please input your favorite color", "");
+alert(analyzeColor(clr));*/
+
+/*^^^completed, easy. but commenting the completion out to continue coding preview within intellij..
+if you wish to test my answers simply comment it back in/out */
+
 
 /* ########################################################################## */
 
@@ -99,6 +148,34 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
+function calculateTotal(luckyNumber, total) {
+    total = parseFloat(total);
+    switch (luckyNumber) {
+        case 0:
+            return "your total today is:\n" + total;
+            break;
+        case 1:
+            return "(10% off)!\n" + (total - (total * .10)).toFixed(2);
+            break;
+        case 2:
+            return "(25% off)!!\n" + (total - (total * .25)).toFixed(2);
+            break;
+        case 3:
+            return "(35% off)!!!\n" + (total - (total * .35)).toFixed(2);
+            break;
+        case 4:
+            return "(50% off)!!!!\n" + (total / 2).toFixed(2);
+            break;
+        case 5:
+            return "(100% off)!!!!!!!!! congrats!\n" + (total * 0).toFixed(2);
+            break;
+        default:
+            return "i know i dont need a default, but you should never see this in practicality."
+            break;
+    }
+}
+
+console.log(calculateTotal(0, 50.733));
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -108,7 +185,9 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+let bill = prompt("please enter your bill", "");
+alert("lucky number " + luckyNumber + "!!\n price before:" + bill + "\n" + calculateTotal(luckyNumber, bill));
 
 /**
  * TODO:
@@ -127,4 +206,30 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  *
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
+ *          ill complete first here then comment out and refract my code
  */
+/*      <- delete to see my work
+let con = confirm("would you like to input a number?");
+if (con = true) {
+    let num = prompt("enter your number", "");
+    num = parseInt(num)
+    if (num % 2 == 0) {
+        alert("this number is even!");
+    } else {
+        alert("this number is odd!");
+    }
+    alert("this number plus 100 is: " + (num + 100))
+    if (num === Math.abs(num)) {
+        alert("this number is positive!");
+    } else {
+        alert("this number is negative!")
+    }
+}
+              delete to see my work   -> */
+
+
+/* REFRACTIONSSSS*/
+
+function numberFun(){}
+
+let con= confirm("would you like to input a number?");
