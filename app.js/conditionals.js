@@ -122,7 +122,7 @@ console.log(analyzeColor(randomColor));
 /*let clr = prompt("please input your favorite color", "");
 alert(analyzeColor(clr));*/
 
-/*^^^completed, easy. but commenting the completion out to continue coding preview within intellij..
+/*^^^completed. but commenting the completion out to continue coding preview within intellij..
 if you wish to test my answers simply comment it back in/out */
 
 
