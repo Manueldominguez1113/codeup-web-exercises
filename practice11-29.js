@@ -39,10 +39,39 @@ console.log("i got an ", grading(65));
 console.log("i got an ", grading(30));
 */
 
+/*
 function grading(score) {
     parseInt(score);
     let grade = (score >= 90) ? "A" : (score >= 80) ? "B" : (score >= 70) ? "C" : (score >= 60) ? "D" : "F";
     return grade
+}
+console.log("i got an ", grading(100));
+console.log("i got an ", grading(86));
+console.log("i got an ", grading(72));
+console.log("i got an ", grading(65));
+console.log("i got an ", grading(30));
+*/
+
+
+function grading(score) {
+    parseInt(score);
+    switch(true) {
+        case (score>=90) :
+            return "A";
+            break;
+        case (score >= 80) :
+            return "B";
+            break;
+        case (score >= 70) :
+            return "C";
+            break;
+        case (score >= 60) :
+            return "D";
+            break;
+        default :
+            return "F";
+            break;
+    }
 }
 console.log("i got an ", grading(100));
 console.log("i got an ", grading(86));
