@@ -133,69 +133,70 @@ Our next exercise is to follow the TDD workflow to develop incremental tests and
 
 ### Exercise #2 Ensure our function returns the right data type.
 - New tests will each have their own `expect`, `it`,  the `describe`
-- Step 1: The smallest possible test, now that the function exists, is to ensure that calling the function gives us a string. Inside of `tests.js`, add an assertion to `sayHello` that it "should return a string when called.". The test should look similar to `expect(typeof sayHello()).toBe("string")`
-- Step 2: Run all tests to make sure that the new test starts red.
-- Step 3: Have your `sayHello` function return a string. The simplest code and smallest change possible is to return an empty string `return ""`. 
-- Step 4: Now, run all the tests to ensure that the previously red test is now turned green by our impelementation. 
-- Step 5: There's nothing to refactor.
+- ✅Step 1: The smallest possible test, now that the function exists, is to ensure that calling the function gives us a string. Inside of `tests.js`, add an assertion to `sayHello` that it "should return a string when called.". The test should look similar to `expect(typeof sayHello()).toBe("string")`
+- ✅Step 2: Run all tests to make sure that the new test starts red.
+- ✅Step 3: Have your `sayHello` function return a string. The simplest code and smallest change possible is to return an empty string `return ""`. 
+- ✅Step 4: Now, run all the tests to ensure that the previously red test is now turned green by our impelementation. 
+- ✅Step 5: There's nothing to refactor.
 - Step 6: Repeat (Repeat the process by moving to build the next, small test)
 - Always: Add, commit, and push your work to GitHub.
 
 ### Exercise #3 - Add a test to confirm actual vs. expected output.
-- Step 1: How that the function exists and returns the right data type, let's add our first realistic assertion. In `tests.js`, assert that `sayHello("Jane")` returns `"Hello, Jane!"`. Our first test should be *super* simple and *super* small.
-- Step 2: Run all tests and make sure that this newly added test is red.
-- Step 3: If the test wants us to return `"Hello, Jane!"` then literally write `return "Hello, Jane!";` because that's the simplest way to green a test looking for `"Hello, Jane!"`.
-- Step 4: Run all tests. They should all be green at this point.
-- Step 5: It's too soon to refactor.
-- Step 6: Repeat step means to add another test, so let's move to the next exercise.
+- ✅Step 1: How that the function exists and returns the right data type, let's add our first realistic assertion. In `tests.js`, assert that `sayHello("Jane")` returns `"Hello, Jane!"`. Our first test should be *super* simple and *super* small.
+- ✅Step 2: Run all tests and make sure that this newly added test is red.
+- ✅Step 3: If the test wants us to return `"Hello, Jane!"` then literally write `return "Hello, Jane!";` because that's the simplest way to green a test looking for `"Hello, Jane!"`.
+- ✅Step 4: Run all tests. They should all be green at this point.
+- ✅Step 5: It's too soon to refactor.
+- ✅Step 6: Repeat step means to add another test, so let's move to the next exercise.
 
 ### Exercise #4 Add another small, simple test
-- Step 1:  In `tests.js`, assert that `sayHello("Alex")` returns `"Hello, Alex!"`. Our first test should be *super* simple and *super* small. This means that our next test should look like `expect(sayHello("Alex")).toBe("Hello, Alex!")`. 
-- Step 2: Run all tests and make sure that this newly added test is red.
-- Step 3: It's challenging not to jump to the "correct" answer already, but let's stay close to the TDD method. Write *just* enough code to green the test. This means making sure that the `sayHello` function definition inside of `code.js` takes an an input argument. If `input === "Alex"`, then we `return "Hello, Alex!"` else `return "Hello, Jane!"`. Don't get too fancy. A cornerstone of TDD is refactoring only once you have a handful of green tests, not just one or two with new inputs.
-- Step 4: Run all tests, expecting that all are now green. Does each test turn green? If so, then we can proceed. We can't refactor unless we have greened a test, even with a hard-coded implementation.
-- Step 5: If you feel the urge to refactor already, hang on! Let's add one more test!
-- Step 6: Repeat the TDD cycle, so let's add another test in the next exercise.
+- ✅Step 1:  In `tests.js`, assert that `sayHello("Alex")` returns `"Hello, Alex!"`. Our first test should be *super* simple and *super* small. This means that our next test should look like `expect(sayHello("Alex")).toBe("Hello, Alex!")`. 
+- ✅Step 2: Run all tests and make sure that this newly added test is red.
+- ✅Step 3: It's challenging not to jump to the "correct" answer already, but let's stay close to the TDD method. Write *just* enough code to green the test. This means making sure that the `sayHello` function definition inside of `code.js` takes an an input argument. If `input === "Alex"`, then we `return "Hello, Alex!"` else `return "Hello, Jane!"`. Don't get too fancy. A cornerstone of TDD is refactoring only once you have a handful of green tests, not just one or two with new inputs.
+- ✅Step 4: Run all tests, expecting that all are now green. Does each test turn green? If so, then we can proceed. We can't refactor unless we have greened a test, even with a hard-coded implementation.
+- ✅Step 5: If you feel the urge to refactor already, hang on! Let's add one more test!
+- ✅Step 6: Repeat the TDD cycle, so let's add another test in the next exercise.
 
 ### Exercise #5 One more test before refactoring...
-- Step 1: Add another (tiny) assertion! In `tests.js`, assert that `sayHello("Pat")` returns `"Hello, Pat!"`. Since our tests should be super simple, the assertion should be `expect(sayHello("Pat")).toBe("Hello, Pat!")`
-- Step 2: Run all tests and make sure that this newly added test is red and failing. 
-- Step 3: Again, you may feel the urge to jump to the "correct" answer already. Let's stay on target. Write *just* enough code to green the test. For this case, *just enough* code means adding another conditional such that if `input === "Pat"`, then the function should have `return "Hello, Pat!"`.
-- Step 4: Run all tests. Does each test turn green? If so, then we can proceed. 
-- Step 5: Refactor! It's definitely refactoring time!
+- ✅Step 1: Add another (tiny) assertion! In `tests.js`, assert that `sayHello("Pat")` returns `"Hello, Pat!"`. Since our tests should be super simple, the assertion should be `expect(sayHello("Pat")).toBe("Hello, Pat!")`
+- ✅Step 2: Run all tests and make sure that this newly added test is red and failing. 
+- ✅Step 3: Again, you may feel the urge to jump to the "correct" answer already. Let's stay on target. Write *just* enough code to green the test. For this case, *just enough* code means adding another conditional such that if `input === "Pat"`, then the function should have `return "Hello, Pat!"`.
+- ✅Step 4: Run all tests. Does each test turn green? If so, then we can proceed. 
+- ✅Step 5: Refactor! It's definitely refactoring time!
 
 ### When to Refactor
-- How do we know that it's time to refactor? The answer: Once we have a handful of green tests, but the logic feels hard-coded, funky, or incomplete, then it's probably refactoring time.
-- Notice that when the input is "Jane", "Pat", or "Alex", the tests green. But what if we sent in any other name as the argument? 
-- When every new test means that we're adding another `if` or `else if` to the code, is there a better way of doing things?
-- Refactoring is only possible once we have a handful of passing, green tests. These give us safety and guidance.
-- This may feel slow, but each new test cycle should only take 2-3 minutes, if not shorter!
-- Since our goal is to have a sayHello function that says hello to any input string, then adding a new conditional for each input is not scalable. 
-- In the TDD approach, refactoring is only possible if you have enough tests and enough code that all the tests are green. In this way, your tests provide a target for the refactor. If your refactoring fails tests that    
+- ✅How do we know that it's time to refactor? The answer: Once we have a handful of green tests, but the logic feels hard-coded, funky, or incomplete, then it's probably refactoring time.
+- ✅Notice that when the input is "Jane", "Pat", or "Alex", the tests green. But what if we sent in any other name as the argument? 
+- ✅When every new test means that we're adding another `if` or `else if` to the code, is there a better way of doing things?
+- ✅Refactoring is only possible once we have a handful of passing, green tests. These give us safety and guidance.
+- ✅This may feel slow, but each new test cycle should only take 2-3 minutes, if not shorter!
+- ✅Since our goal is to have a sayHello function that says hello to any input string, then adding a new conditional for each input is not scalable. 
+- ✅In the TDD approach, refactoring is only possible if you have enough tests and enough code that all the tests are green. In this way, your tests provide a target for the refactor. If your refactoring fails tests that    
 
 ### Exercise #6 Implement the refactor!
-- Inside `sayHello` in `code.js`, what's a change you can identify that will improve the overall functioning of this function?
-- Can you get the implmentation of `sayHello` down to a function with only one line of code inside?
-- If we have `return "Hello, " + input + "!";`, does this work for all names?
-- Does this bring up any other issues with other inputs?
+- ✅Inside `sayHello` in `code.js`, what's a change you can identify that will improve the overall functioning of this function?
+- ✅Can you get the implmentation of `sayHello` down to a function with only one line of code inside?
+- ✅If we have `return "Hello, " + input + "!";`, does this work for all names?
+  - ✅Does this bring up any other issues with other inputs?      // numbers will have an issue, anything not a string really..
 
 ### Exercise #7 Add, commit, and push your work to GitHub.
-- "If your code ain't checked-in to source control, then it doesn't exist."
-- In your terminal, ensure that the `pwd` command shows that you're in the directory for this project.
-- First, `git status`. Notice which files are tracked by git and which files have changes.
-- Second, type `git add -A` to tell git that you want to get all the changed files staged for commit. 
-- Now, type `git status`. You should see file names in green. This means that the files are ready for commit.
-- Next, type `git commit -m "add tests and ability to say 'hello' to any input."`
-- Type `git status`, again, to make sure that all files are added and committed.
-- Finally, push your work with `git push`. 
+- ✅"If your code ain't checked-in to source control, then it doesn't exist."
+- ✅In your terminal, ensure that the `pwd` command shows that you're in the directory for this project.
+- ✅First, `git status`. Notice which files are tracked by git and which files have changes.
+- ✅Second, type `git add -A` to tell git that you want to get all the changed files staged for commit. 
+- ✅Now, type `git status`. You should see file names in green. This means that the files are ready for commit.
+- ✅Next, type `git commit -m "add tests and ability to say 'hello' to any input."`
+- ✅Type `git status`, again, to make sure that all files are added and committed.
+- ✅Finally, push your work with `git push`. 
 
 ### Exercise #8 "Repeat" step (where we look for additional tests to add)
-- First, in `tests.js`, add `expect(sayHello()).toBe("Hello, World!")`. Then refresh `report.html` to see the failing test.
-- Follow that by adding just enough code inside of the `sayHello` function `code.js` to green that latest test. Recommend checking if the input variable's value is `undefined`.
-- Next, add `expect(sayHello(true)).toBe("Hello, World!")` to the `tests.js` file. Refresh to see the failing red test.
-- Add just enough code to `code.js` to green that latest test. `if (input === true)` then `return "Hello, World!"`
-- Now, add `expect(sayHello(false)).toBe("Hello, World!")` to the `<table></table>ests.js` file. Refresh to see the failing test.
-- Add just enough code to `code.js` to green this test.
+- ✅First, in `tests.js`, add `expect(sayHello()).toBe("Hello, World!")`. Then refresh `report.html` to see the failing test.
+- ✅Follow that by adding just enough code inside of the `sayHello` function `code.js` to green that latest test. 
+- ✅Recommend checking if the input variable's value is `undefined`.
+- ✅Next, add `expect(sayHello(true)).toBe("Hello, World!")` to the `tests.js` file. Refresh to see the failing red test.
+- ✅Add just enough code to `code.js` to green that latest test. `if (input === true)` then `return "Hello, World!"`
+- ✅Now, add `expect(sayHello(false)).toBe("Hello, World!")` to the `<table></table>ests.js` file. Refresh to see the failing test.
+- ✅Add just enough code to `code.js` to green this test.
 - Once all the tests are green, identify refactor opportunities and refactor your solution.
 - Are there any other [edge cases](https://en.wikipedia.org/wiki/Edge_case) you want to write a test for? You have a green light to add more of your own tests to "drive" the implementation.
 - Some edge cases to consider. What if:
