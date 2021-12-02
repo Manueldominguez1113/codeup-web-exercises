@@ -1,4 +1,4 @@
-(function() {
+(function () {
     "use strict";
 
     /**
@@ -11,6 +11,10 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+    let person = {
+        firstName: "Manuel",
+        lastName: "Dominguez"
+    }
 
     /**
      * TODO:
@@ -21,7 +25,11 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    function sayHello(name) {
+        console.log("Hello " + person.firstName + " " + person.lastName + "!");
+    }
 
+    sayHello();
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -36,11 +44,31 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    let shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    function discountChecker(x) {
+        if (x > 200) {
+            return x = x - (x * .12)
+        }
+        return x
+    }
+
+    console.log(discountChecker(400)); // checked on calc to proof-read
+    let nondiscount = ""
+    let discount = 0
+    shoppers.forEach(function (shoppers) {
+        nondiscount = shoppers.name + "\'s total is: $" + shoppers.amount.toFixed(2)
+        if (discountChecker(shoppers.amount) !== shoppers.amount) {
+            discount = discountChecker(shoppers.amount)
+            return console.log(nondiscount += " .." + shoppers.name + " got a discount! they now must pay: $" + discount.toFixed(2));
+        }
+        return console.log(nondiscount);
+    })
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,6 +82,38 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    let books = [{
+        title: "Shadow and Bone",
+        author: {
+            firstName: "Leigh",
+            lastName: "Bardugo"
+        }
+    }, {
+        title: "Harry Potter and the Sorcerer\'s Stone",
+        author: {
+            firstName: "Joanne",
+            lastName: "Rowling"
+        }
+    }, {
+        title: "the Witcher",
+        author: {
+            firstName: "Andrzej",
+            lastName: "Sapkowski"
+        }
+    }, {
+        title: "A Game of Thrones",
+        author: {
+            firstName: "George",
+            lastName: "Martin"
+        }
+    }, {
+        title: "the Eye of the World(Wheel of Time series 1)",
+        author: {
+            firstName: "Robert",
+            lastName: "Jordan"
+        }
+    }]
+
 
     /**
      * TODO:
@@ -79,6 +139,16 @@
      *      ---
      *      ...
      */
+
+    books.forEach(function (books) {
+        let i = 0
+        console.log("Book # " + books[books.indexOf(books.title)])
+        console.log("Title: " + books.title)
+        console.log("Author: "+books.author.firstName+" "+books.author.lastName)
+        console.log("\n\n ")
+        i++
+    })
+
 
     /**
      * Bonus:

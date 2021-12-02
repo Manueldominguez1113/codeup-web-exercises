@@ -74,7 +74,7 @@ function lockdown(password){
     return alert("account locked! please contact customer support....")     //in theory, cool. cant actually lock an account
                                                                                 // without going into more detail..
 }
-lockdown();
+//  lockdown();
 
 /*function promptt(password) {                                  // do while password prompt; y'know.. without a lockdown feature..
     password = false
@@ -93,3 +93,4 @@ lockdown();
 
 promptt();*/
 
+console.log('\n\n\n\t dupe test')
