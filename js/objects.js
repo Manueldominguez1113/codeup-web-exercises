@@ -139,20 +139,20 @@
      *      ---
      *      ...
      */
-
+    let i = 1
     books.forEach(function (books) {
-        let i = 0
-        console.log("Book # " + books[books.indexOf(books.title)])
+
+        console.log("Book # " + i)
         console.log("Title: " + books.title)
-        console.log("Author: "+books.author.firstName+" "+books.author.lastName)
-        console.log("\n\n ")
+        console.log("Author: " + books.author.firstName + " " + books.author.lastName)
+        console.log("\n---")
         i++
     })
 
 
     /**
      * Bonus:
-     * - Create a function named `createBook` that accepts a title and author
+     * - ✅Create a function named `createBook` that accepts a title and author
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
      *   use your function.
@@ -160,5 +160,25 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    function createBook(bookTitle, authorFirst, authorLast) {
 
+        let x = (typeof bookTitle === "string" && typeof authorFirst === "string" && typeof authorLast === "string")
+
+        if (x === true) {
+            let newBook={
+                title: bookTitle,
+                author: {
+                    firstName: authorFirst,
+                    lastName: authorLast
+                }
+            }
+            return console.log(books=[...books,newBook])
+        } else return console.log("error! not a valid input");
+
+    }
+
+ createBook("test","Firstname","Lastname")
+    createBook("2test","2Firstname","2Lastname")
+    createBook("test","Firstname",23)
+    //tested thrice to ensure this will always add a new book whenever called, or reject if invalid.
 })();
