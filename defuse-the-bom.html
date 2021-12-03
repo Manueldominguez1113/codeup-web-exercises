@@ -26,11 +26,17 @@
 
         detonationTimer--;
     }
+    let updater=setInterval(function (){
+        if(detonationTimer>=0){
+        updateTimer();
+        }
+        console.log("counting down.."+ detonationTimer)
+    },1000);
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-
+clearInterval(updater);
     }
 
     // Don't modify anything below this line!

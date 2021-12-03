@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM: Query and Modify</title>
+</head>
+<body>
+
+<h1 id="main-header">Hello World!</h1>
+<ul>
+    <li data-dbid="1">Item 1</li>
+    <li data-dbid="2">Item 2</li>
+    <li data-dbid="3">Item 3</li>
+    <li data-dbid="4">Item 4</li>
+    <li data-dbid="5">Item 5</li>
+</ul>
+<h2 id="sub-header">Hello Again.</h2>
+<p class="sub-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+
+</p>
+<p class="sub-paragraph2">
+    this is the Lorem ipsum! I love latin and have heard of this. its used as placeholder. and its improper latin.
+    to be exact they used the philosopher Cicero's dialogue, known as "on the ends of good and evil",
+    properly named "de finibus bonorum et malorum". but the Lorem Ipsum is pieces of this dialogue put into nonsensical
+    sentences for the purpose of
+
+    translation(cause im a nerd and like to use latin)
+    The pain itself is important, but the pain is enhanced by the (adipisicing) process,
+    but I give it time to cut it down so that I do some great work and pain.
+    In order that for the most part, any one of us will come to the exercise
+    of any kind of employment except to take advantage of the objectives from it.
+    But the pain in the film is (irure) to condemn, in pleasure it wants to escape
+    from the pain of being (cillum) in pain, no result. They are the exceptions the blinds yearn for,
+    they do not see, they are the ones who abandon their responsibilities to the fault that is
+    soothing the soul's hardships.
+</p>
+<p class="sub3-truth">
+    if you care or wanted to know and kept reading, Lorem ipsum is caused by most likey a galley-post,
+    the end and start of a new page starting with "Lorem ipsum..."
+    below i copied and translated the full paragraph, via wiki cause i want to keep studying code.
+    the proper paragraph is:
+    Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+    totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+    Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos,
+    qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum,
+    quia dolor sit amet consectetur adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt,
+    ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam,
+    quis nostrum[d] exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+    [D]Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum,
+    qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus,
+    qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint,
+    obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+    Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit,
+    quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est,
+    omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet,
+    ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
+    ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+
+</p>
+<p class="sub4-truth">
+    english:
+    But I must explain to you how all this mistaken idea of reprobating pleasure and extolling pain arose. To do so, I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure? [33] On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammeled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+</p>
+
+<script>
+    (function() {
+        "use strict";
+        // TODO: Uncomment next line and get the main header element by id
+        let mainHeader = document.getElementById("main-header")
+
+        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+        mainHeader.innerHTML = "Javascript is Cool";
+
+        // TODO: Uncomment the next line and get the sub header element by id
+        let subHeader = document.getElementById("sub-header");
+
+        // TODO: Set the text color of subHeader to blue
+        subHeader.style.color ="blue";
+        // TODO: Uncomment the next line and get all list items
+         let listItems = document.getElementsByTagName("li") ;
+
+        // TODO: Set text color on every other list item to grey
+        for(let i=0;i<listItems.length;i+=2){
+            listItems[i].style.color="grey";
+        }
+
+
+
+        // TODO: Set text color of li with dbid = 1 to blue
+      listItems[0].style.color="blue" //     would work- but i think wants different answer
+                                // need to come back to this. what element is data-dbids so i can call it..
+
+        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+        let subParagraphs = document.getElementsByClassName("sub-paragraph");
+console.log(subParagraphs)
+        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs[0].innerHTML="Mission Accomplished!"
+    })();
+</script>
+</body>
+</html>
