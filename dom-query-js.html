@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>DOM: Query and Modify</title>
@@ -7,6 +7,8 @@
 <body>
 
 <h1 id="main-header">Hello World!</h1>
+<br>
+<button id="btn1">I Change the header!!</button>
 <ul>
     <li data-dbid="1">Item 1</li>
     <li data-dbid="2">Item 2</li>
@@ -14,7 +16,12 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
+<button id="btn3">I'll change item1 color to blue</button>
 <h2 id="sub-header">Hello Again.</h2>
+<button id="btn2">I'll change the color of hello!</button>
+<br>
+<br>
+<button id="btn4">I'll change this paragraph!</button>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -47,17 +54,23 @@
     below i copied and translated the full paragraph, via wiki cause i want to keep studying code.
     the proper paragraph is:
     Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-    totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-    Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos,
+    totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt,
+    explicabo.
+    Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+    eos,
     qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum,
     quia dolor sit amet consectetur adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt,
     ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam,
     quis nostrum[d] exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-    [D]Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum,
-    qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus,
+    [D]Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel
+    illum,
+    qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos
+    ducimus,
     qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint,
-    obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-    Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit,
+    obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et
+    dolorum fuga.
+    Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio,
+    cumque nihil impedit,
     quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est,
     omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet,
     ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
@@ -66,43 +79,119 @@
 </p>
 <p class="sub4-truth">
     english:
-    But I must explain to you how all this mistaken idea of reprobating pleasure and extolling pain arose. To do so, I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure? [33] On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammeled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+    But I must explain to you how all this mistaken idea of reprobating pleasure and extolling pain arose. To do so, I
+    will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth,
+    the master-builder of human happiness. No one rejects, dislikes or avoids pleasure itself, because it is pleasure,
+    but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely
+    painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but
+    occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial
+    example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who
+    has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who
+    avoids a pain that produces no resultant pleasure? [33] On the other hand, we denounce with righteous indignation
+    and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire,
+    that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in
+    their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases
+    are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammeled and when
+    nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided.
+    But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur
+    that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters
+    to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to
+    avoid worse pains.
 </p>
 
 <script>
-    (function() {
+    (function () {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
         let mainHeader = document.getElementById("main-header")
 
-        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "Javascript is Cool";
+        // TODO: Set inner html of mainHeader to "JavaScript is Cool"    //button 1
+        //I completed the original, then created buttons.
+        //now I want to make these buttons reversible.
+        let listener1 = function () {
+            if (mainHeader.innerHTML === "Hello World!") {
+                mainHeader.innerHTML = "Javascript is Cool";
+            } else {
+                mainHeader.innerHTML = "Hello World!";
+            }
+        };
+
+        //button 1
+        let btn1 = document.getElementById("btn1");
+        btn1.addEventListener('click', listener1);
 
         // TODO: Uncomment the next line and get the sub header element by id
         let subHeader = document.getElementById("sub-header");
 
-        // TODO: Set the text color of subHeader to blue
-        subHeader.style.color ="blue";
+        // TODO: Set the text color of subHeader to blue            //button 2
+        // I shall create a randomizer to make hello again anything in the list on click!!
+        let list = ["blue", "red", "green", "white", "brown", "black", "yellow", "orange", "purple", "lime"];
+
+        function random() {
+            return Math.floor(Math.random() * (list.length - 1));
+        }
+
+        let listener2 = function () {
+            let click = subHeader.style.color = list[random()];
+
+        }
+        document.getElementById("btn2").addEventListener('click', listener2);
         // TODO: Uncomment the next line and get all list items
-         let listItems = document.getElementsByTagName("li") ;
+
+        let listItems = document.getElementsByTagName("li");
 
         // TODO: Set text color on every other list item to grey
-        for(let i=0;i<listItems.length;i+=2){
-            listItems[i].style.color="grey";
+
+        for (let i = 0; i < listItems.length; i += 2) {
+            listItems[i].style.color = "grey";
         }
 
 
-
         // TODO: Set text color of li with dbid = 1 to blue
-      listItems[0].style.color="blue" //     would work- but i think wants different answer
-                                // need to come back to this. what element is data-dbids so i can call it..
+        // listItems[0].style.color="blue" //     would work- but i think wants different answer
+
+        let dbid1 = document.querySelector('[data-dbid="1"]') // found my answer.. updated
+
+        let listener3 = function () {
+            if (dbid1.style.color === "blue")
+                dbid1.style.color = "grey";
+            else {
+                dbid1.style.color = "blue"
+            }
+        }                                      // ill make button 3
+        let btn3 = document.getElementById("btn3");
+        btn3.addEventListener('click', listener3);
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+
         let subParagraphs = document.getElementsByClassName("sub-paragraph");
-console.log(subParagraphs)
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML="Mission Accomplished!"
+
+        console.log(subParagraphs);
+
+        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"      //button 4
+        let x = 0  // my button "switch"
+
+        let listener4 = function () {
+            if (x === 0) {
+                subParagraphs[0].innerHTML = "Mission Accomplished!";
+                x++
+            } else {
+                subParagraphs[0].innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do\n" +
+                    "    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\n" +
+                    "    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut\n" +
+                    "    aliquip ex ea commodo consequat. Duis aute irure dolor in\n" +
+                    "    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\n" +
+                    "    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in\n" +
+                    "    culpa qui officia deserunt mollit anim id est laborum.";
+                x--
+            }
+        }
+        let btn4 = document.getElementById("btn4");
+        btn4.addEventListener('click', listener4);
+
+
     })();
+
 </script>
 </body>
 </html>
