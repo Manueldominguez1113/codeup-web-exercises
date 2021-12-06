@@ -21,7 +21,7 @@ planetsArray = planetsString.split('|');
 
     let string=planetsArray.join('<br>');
     console.log(string);
-document.write(string,'<br>','<br>'); // I entered two breaks to create more room in the html to see
+// document.write(string,'<br>','<br>'); // I entered two breaks to create more room in the html to see
                                         //      the tables
     /** BONUS:
      * Create another string that would display your planets in an undordered
@@ -30,9 +30,8 @@ document.write(string,'<br>','<br>'); // I entered two breaks to create more roo
      */
 // planetsArray.push('</ul>');
 planetsArray.unshift('<ul>');
-console.log(planetsArray)
 let string2 =planetsArray.join('<li>');
 let stringDone= string2+'</ul>'
 console.log(stringDone)
-document.write(stringDone)
+// document.write(stringDone)
 })();
