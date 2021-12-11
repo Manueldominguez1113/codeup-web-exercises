@@ -6,7 +6,8 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 div {
-    padding: 1px;
-    border: 1px black;
-
+    padding: 8px;
+    margin: 7px;
+    border: 1px lightgray solid;
+    --bg-info: blue
 }
