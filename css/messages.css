@@ -9,5 +9,29 @@ div {
     padding: 8px;
     margin: 7px;
     border: 1px lightgray solid;
-    --bg-info: blue
+    --bg-info: #adc8e6;
+    --text-info: #5d5df1;
+    --bg-success: lightgreen;
+    --text-success: green;
+    --bg-warn: lightyellow;
+    --text-warn: #7e7e20;
+    --bg-error: pink;
+    --text-error: #790000;
+}
+
+.message-info{
+    background-color: var(--bg-info);
+    color: var(--text-info);
+}
+.message-success{
+    background-color: var(--bg-success);
+    color: var(--text-success);
+}
+.message-warning{
+    background-color: var(--bg-warn);
+    color: var(--text-warn);
+}
+.message-error{
+    background-color: var(--bg-error);
+    color: var(--text-error);
 }
