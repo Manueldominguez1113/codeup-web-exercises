@@ -1,0 +1,120 @@
+.contain {
+    border: 2px solid;
+    margin: 10px;
+    height: 400px;
+    width: 400px;
+
+}
+#div1{
+float: left;
+border: 2px solid blue;
+}
+#div2{
+    float: right;
+    clear: left;
+    border: 2px solid red;
+}
+.box{
+    height: 100px;
+    width: 100px;
+    border: 1px dotted orange;
+    margin: 50px 30px;
+}
+#one{
+    font-weight: bold;
+}
+#two{
+    background:black;
+    color: white;
+}
+#three{
+background-color: #3B94D9;
+}
+
+#four{
+background-color: #790000;
+}
+
+.newsletter{
+
+    border: 2px solid maroon;
+    height: 1000px;
+    width: 100%;
+}
+.section{
+
+    border: 2px solid black;
+    height: 20%;
+    width: calc(95% - 2px);
+    margin: 5px auto
+}
+.box1{
+    float: left;
+    border: 1px solid black;
+    height: calc(100%);
+    width: calc(35%);
+    background-color: #5d5df1;
+}
+.text1{
+    width: calc(64%);
+    height: auto;
+    border: 2px dotted black;
+    float:right;
+    overflow-wrap: normal;
+}
+.circle1{
+    text-align: center;
+    line-height: 180px;
+    float: right;
+    border-radius: 50%;
+    height: calc(100%);
+    width: calc(35%);
+    background-color: #5d5df1;
+}
+.text2{
+    width: calc(64%);
+    height: auto;
+    border: 2px dotted black;
+    float:left;
+    overflow-wrap: normal;
+}
+
+.boxcontainer{
+    height: 500px;
+    width: 80%;
+    margin: auto;
+    border: 2px solid black;
+    position: relative;
+}
+.boxx1{
+    border: 1px dot-dash red;
+    float: left;
+    padding: 50px;
+    margin: 5px;
+    background-color: #ca3a11;
+}
+.boxx2{
+    border: 7px dot-dash blue;
+    padding: 50px;
+    float: right;
+    margin: 5px;
+    background-color: #5d5df1;
+}
+.boxx3{
+    border: 1px dot-dash yellow;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 50px;
+    margin: 5px;
+    background-color: #ba9d37;
+}
+.boxx4{
+    border: 1px dot-dash black;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 50px;
+    margin: 5px;
+    background-color: #333333;
+}
