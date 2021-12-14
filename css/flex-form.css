@@ -25,8 +25,6 @@ body {
     width: 100%;
     /* TODO: add a flex container to this selector */
     display: flex;
-    justify-content: center;
-    align-content: center;
 }
 
 .flex-form {
@@ -36,7 +34,6 @@ body {
     border-radius: 5px;
     /* TODO: Add an automatic margin and a flex container to this selector */
     margin: auto;
-    flex-shrink: 1;
 
 }
 
@@ -49,7 +46,7 @@ body {
     border-radius: 0;
     outline: 0;
     -webkit-appearance: none;
-    ;
+
 }
 
 .btn-primary {
@@ -65,3 +62,4 @@ body {
         Read more about Flex Basis: https://java.codeup.com/appendix/further-reading/html-css/flexbox-additional-concepts/#flex-basis */
     flex-basis: 15em;
 }
+
