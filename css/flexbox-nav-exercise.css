@@ -31,12 +31,12 @@ a:visited{
 a:hover{
     color: #3B94D9;
 }
+
 .footer_bar{
     display: flex;
     justify-content: space-around;
 }
 .footer_bar *{
-    margin: 0 auto;
 }
 .footer_bar .location *{
     padding: 8px 0;
@@ -45,25 +45,51 @@ a:hover{
 .footer_bar .hello{
    text-wrap: normal;
     max-width: 30%;
+    flex-basis: 25%;
 }
 
 .footer_bar .subscribe_panel{
     display: flex;
     flex-direction: column;
 }
-.footer_bar .subscribe_panel .sub{
+.footer_bar .subscribe_panel > *{
+margin: 1em;
+}
+.footer_bar .subscribe_panel .under_sub{
     display: flex;
     flex-direction: row;
-
 }
-
+.footer_bar .subscribe_panel .under_sub > *{
+    padding: 5px;
+}
+input{
+    border-radius: 20px;
+    background-color: #848487;
+}
+#submit{
+    background-color: #333333;
+    color: #DDDDDD;
+}
 .navbottom{
+    background-color: #333333;
+    color: #DDDDDD;
+    border: 1px solid black;
     display: flex;
-    justify-content: space-around;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
     position: absolute;
     bottom: 0;
 
 }
+.navbottom > *{
+    align-self: center;
+    padding: 40px 30px;
+}
+.navbottom .store{
+    flex-grow: 1;
+}
+
 .store{
     flex-grow: 2;
 }

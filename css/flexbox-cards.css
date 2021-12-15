@@ -40,6 +40,9 @@ a {
     letter-spacing: 2px;
     text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
+.card:nth-of-type(odd){
+    margin: 4em 0;
+}
 
 .card-body {
     padding-bottom: 1em;

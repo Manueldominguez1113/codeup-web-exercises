@@ -34,7 +34,7 @@ body {
     border-radius: 5px;
     /* TODO: Add an automatic margin and a flex container to this selector */
     margin: auto;
-
+    display: flex;                        /*was missing this simple string for days...*/
 }
 
 .flex-form > * {
