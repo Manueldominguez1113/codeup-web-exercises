@@ -1,0 +1,33 @@
+.contact_us{
+    display: flex;
+position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid black;
+    background-color: #333333;
+    color: #DDDDDD;
+    width: 100%;
+}
+
+.contact_us a{
+    color: #3B94D9;
+    text-decoration: none;
+}
+
+.contact_us a:visited{
+    color: #477e02;
+}
+.contact_us a:hover{
+    color: #ffffff;
+}
+.contact_us *{
+    align-self: center;
+    padding: 40px 30px;
+list-style-type: none;
+    flex-shrink: 1;
+}
+#logo{
+    margin:auto;
+    flex-shrink: 0;
+}
