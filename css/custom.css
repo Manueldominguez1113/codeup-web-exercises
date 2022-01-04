@@ -1,0 +1,14 @@
+.jumbotron{
+    margin-top: 3em;
+background-size: 100% ;
+ background-repeat: repeat-x;
+}
+.jumbotron h1{
+    font-size: 6vw;
+background-color: rgba(255, 255, 255, 0.7);
+text-align: center;
+}
+p{
+    margin-left: 1em;
+    padding-top: 1em;
+}
