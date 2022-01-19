@@ -6,13 +6,84 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .hilite {
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
+
+<h1 id="heading1" class="codeup">Hello!!</h1>
+<p id="mainparagraph" class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<ul id="list" class="">
+    <li id="li1">1</li>
+    <li id="li2">2</li>
+    <li id="li3">3</li>
+</ul>
+<div id="whole" class="codeup">
+    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, esse eveniet pariatur placeat rerum veniam.</span>
+</div>
+<!--Use the same id on 2 elements. How does this change the jQuery selection?
+        A: pulls the first of the two id's only.-->
+
+
 <script src="js/jquery-2.2.4.js"></script>
 <script>
-    $(document).ready(function() {
-        alert( 'The DOM has finished loading!' );
+    /*part 3 selectors*/
+    let lists = $("li");
+    lists.css('font-size', '20px');
+    let heading = $("h1");
+    let paragraph = $("p");
+    let multiple = $("li, h1, p");
+/*works.*/
+/*    multiple.addClass("hilite");*/
+
+    alert(heading.text());
+
+
+    /*i know its not exactly highlight. but instead pretty cool jquery feature i wanted to put in..*/
+
+    let newText = paragraph.text().split(" ").join("</span> <span>"); /*creates spans for each word*/
+    newText = "<span>" + newText + "</span>";
+    /*so that i can add a hover for EACH word*/
+    paragraph.html(newText).find("span").hover(function () {
+        $(this).addClass("hilite");
+    }, function () {
+        $(this).removeClass("hilite");
+    })
+
+    /*makes a click function to show and hide all text in selected areas*/
+    $(document).click(function () {
+        lists.toggle("highlight");
+        heading.toggle("highlight");
+        paragraph.toggle("highlight");
     });
+    /*
+    $(document).click(function(){
+    heading.toggle("highlight");
+    });
+    $(document).click(function(){
+    paragraph.toggle("highlight");
+    });*/
+
+    /*part 2 selectors*/
+    /* let codeup = $(".codeup")
+    codeup.css('border','2px solid red') */
+
+    /*part 1 selectors*/
+    /*    let heading = $("#heading1").text();
+    alert(heading); */
+    /*    let paragraph = $("#mainparagraph").text();
+        alert(paragraph);*/
+    /*    let list = $("#list").text();
+        alert(list);*/
+
+
+    /*intro exercise*/
+    /*        $(document).ready(function() {
+            alert( 'The DOM has finished loading!' );
+        });    */
 </script>
 </body>
 </html>
