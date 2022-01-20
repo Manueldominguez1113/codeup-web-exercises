@@ -19,17 +19,26 @@
 <script src="./js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
-let code;
+let code=$("#code");
+let trueCode = ""
     $(document).keyup(function(event){
-         code =event.keyCode
-        $("#code").
-        console.log(code);
+        if(event.keyCode !==13) {
+            trueCode += event.keyCode;
+            code.text(event.keyCode);
+            console.log(trueCode);
+        }
     });
 
     $(document).keypress(function(event){
         if(event.keyCode===13){
-
+            if(trueCode === "38384040373937396665"){
+                alert("you have gained 30 lives!!");
+                trueCode = ""
+            } else
+                alert("Wrong code! try again");
+                trueCode = ""
         }
+
     })
 </script>
 </body>
