@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            margin-bottom: 20px;
+        }
+        tr {
+            border: 2px solid blue;
+        }
+    </style>
+
+</head>
+<body>
+<nav>
+    <ul>
+        <li>
+            <a href="#table">table</a>
+        </li>
+        <li>two</li>
+        <li>
+            <a href="#floofers">puppies</a>
+        </li>
+    </ul>
+</nav>
+<header>
+    <h1 class="main-title" >this is a heading</h1>
+    <br>
+    <h2>This is a subtitle</h2>
+</header>
+<hr>
+<!-- FIRST SECTION -->
+<div>
+    <section id="0sec">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </section>
+</div>
+<section id="1sec" class="section-one">
+    <div>
+        <p class="bio">Lorem "ipsum" dolor sit amet, cons<br>ectetur adipisicing
+            elit.
+            Dolore ex
+            nam natus quae rerum, tenetur.</p>
+        <a href=""> click link </a>
+    </div>
+    <img src="https://random.dog/d40de385-3626-46c8-94bf-b7097226174f.jpg"
+         alt="two cute floofers"
+         width="300px"
+         height="auto"
+         id="floofers"
+    >
+</section>
+<p id="p1">hey, go check out this awesome cupcake ipsum    <a
+        href="http://www.cupcakeipsum.com/paragraphs/5/length/long/with_love/false/start_with_cupcake/false/seed/c4ead25c93fb9fe49084ec7958c4223784cfa07639a05cedf47d57f52a337f7c"
+        target="_blank"
+>click here</a></p>
+
+<ul id="list">
+    <li>something</li>
+    <li>
+        <a href="https://www.mcdonalds.com/us/en-us.html">i'm loving it</a>
+    </li>
+    <li>something</li>
+</ul>
+
+<ol>
+    <li>something</li>
+    <li>something</li>
+    <li>something</li>
+
+</ol>
+
+<table id="table">
+    <!--    first row -->
+    <tr>
+        <th>List Items</th>
+        <th>Price</th>
+    </tr>
+    <!--    second row -->
+    <tr>
+        <td>
+            oreos
+        </td>
+        <td>
+            $1.50
+        </td>
+    </tr>
+    <tr>
+        <td>
+            smoothies
+        </td>
+        <td>
+            $10.00
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ice cream
+        </td>
+        <td>
+            $3.50
+        </td>
+    </tr>
+
+</table>
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+//         TODO:1. give all table cells a black border
+    $("td").css({"border":"1px solid black"});
+//         TODO:2. remove all bullet points from the unordered list items
+    $("ul").css({"list-style-type":"none"});
+//         TODO:3. change the font family of the entire page to luxurious roman
+    $(document).css({"font-family":"'Luxurious Roman', cursive"});
+
+    // TODO:4. give each section a unique id✅
+
+    // TODO:5. using the unique id’s give each section a different background color
+$("#0sec").css({"background-color":"lightblue"});
+$("#1sec").css({"background-color":"grey"});
+
+    // TODO:6. give 3 elements the same class name of “highlight”
+$("#p1").addClass("highlite");
+$("#table").addClass("highlite");
+$("#list").addClass("highlite");
+    // TODO:7. give each of those 3 elements a bright yellow background
+$(".highlite").css({"background": "yellow"});
+    // TODO: 8. BONUS: when you click on the image, make the image larger than what it currently is
+// to make it a click feature like requested
+
+/*  $("#floofers").click(function(){
+    $(this).css({"width":"500px", "height":"500px"});
+})  */
+
+// to make a hover feature
+$("#floofers").hover(function (){
+    $(this).css({"width":"600px","height":"600px"})
+}, function (){
+    $(this).css({"width":"300","height":"auto"})
+    })
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+<style>
+    #box{
+        border: 1px solid black;
+        height: 100px;
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+<h1>Enter the Konami Code</h1>
+<div id="box">
+<div id="code" class=""></div>
+</div>
+
+<script src="./js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+let code;
+    $(document).keyup(function(event){
+         code =event.keyCode
+        $("#code").
+        console.log(code);
+    });
+
+    $(document).keypress(function(event){
+        if(event.keyCode===13){
+
+        }
+    })
+</script>
+</body>
+</html>

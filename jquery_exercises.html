@@ -30,14 +30,31 @@
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
+    /*mouse events exercises*/
+    $("h1").click(
+        function () {
+            $(this).css({"background-color": "blue"})
+        })
+    $("p").dblclick(
+        function () {
+            $(this).css({"font-size": "18px"})
+        })
+    $("li").hover(
+        function(){
+            $(this).css({"color":"red"})
+        },
+        function (){
+            $(this).css({"color":"black"})
+        })
+
     /*part 3 selectors*/
-    let lists = $("li");
-    lists.css('font-size', '20px');
-    let heading = $("h1");
-    let paragraph = $("p");
-    let multiple = $("li, h1, p");
-/*works.*/
-/*    multiple.addClass("hilite");*/
+    /*    let lists = $("li");
+        lists.css('font-size', '20px');
+        let heading = $("h1");
+        let paragraph = $("p");
+        let multiple = $("li, h1, p");*/
+    /*works.*/
+    /*    multiple.addClass("hilite");*/
 
     alert(heading.text());
 
