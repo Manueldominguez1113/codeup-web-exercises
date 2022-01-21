@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Keyboard Events Mini-Exercise</title>
+</head>
+<body>
+
+<h1>Keyboard Events Mini-Exercise</h1>
+
+<script src="./js/jquery-2.2.4.js"></script>
+<script>
+
+    $(document).ready(function () {
+        "use strict";
+
+        $(this).keydown(function (event) {
+            // when the user types the letter 'a', pop up an alert that says "Welcome!"
+            if (event.keyCode === 65) {
+                alert("Welcome!");
+            }
+            // when the user types the letter 'c', pop up a confirm that says "Logout?"
+            if (event.keyCode === 67) {
+                confirm("logout?");
+            }
+            // when the user types the letter 'p', prompt the user to enter their username
+            if (event.keyCode === 80) {
+                prompt("enter your username", "");
+            }
+        })
+
+
+    });
+
+</script>
+
+</body>
+</html>
