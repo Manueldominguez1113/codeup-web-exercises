@@ -2,96 +2,15 @@
 <html>
 <head>
     <title>Konami Code</title>
-    <style>
-        body {
-            color: white;
-            background-color: black;
-
-        }
-
-        #box {
-            color: black;
-            background-color: white;
-            border: 1px solid black;
-            height: 300px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .win {
-            background-image: url("./assets/directionals/win.gif");
-            background-size: cover;
-        }
-
-        .lose {
-            background-image: url("./assets/directionals/Wrong.gif");
-            background-size: cover;
-        }
-
-    </style>
+    <link rel="stylesheet" href="./css/konami.css">
 </head>
 <body class="">
-<h1>Enter the Konami Code</h1>
+<h1 style="text-align: center">Enter the Konami Code</h1>
 <div id="box">
     <div id="code" class="center"></div>
 </div>
 
 <script src="./js/jquery-2.2.4.js"></script>
-<script>
-    "use strict";
-    let code = $("#code");
-    let trueCode = ""
-    $(document).keyup(function (event) {
-        if (event.keyCode !== 13) {
-            trueCode += event.keyCode;
-            switch (event.key) {
-                case("ArrowUp"):
-                    code.append('<img src="./assets/directionals/up.png" alt="input" width="150" height="150">');
-                    break;
-                case("ArrowDown"):
-                    code.append('<img src="./assets/directionals/down.png" alt="input" width="150" height="150">');
-                    break;
-                case("ArrowLeft"):
-                    code.append('<img src="./assets/directionals/left.png" alt="input" width="150" height="150">');
-                    break;
-                case("ArrowRight"):
-                    code.append('<img src="./assets/directionals/right.png" alt="input" width="150" height="150">');
-                    break;
-                case("b"):
-                    code.append('<img src="./assets/directionals/B.png" alt="input" width="150" height="150">');
-                    break
-                case("a"):
-                    code.append('<img src="./assets/directionals/A.png" alt="input" width="150" height="150">');
-                    break;
-                default:
-                    code.append('<img src="./assets/directionals/X.png" alt="input" width="150" height="150">');
-
-            }
-
-
-            console.log(event.key);
-        }
-    });
-
-    $(document).keypress(function (event) {
-        if (event.keyCode === 13) {
-            if (trueCode === "38384040373937396665") {
-                code.html("")
-                trueCode = ""
-                $('body').addClass("win").removeClass("lose")
-                alert("you have gained 30 lives!!");
-            } else {
-                code.html("")
-                trueCode = ""
-                $('body').addClass("lose").removeClass("win")
-                alert("Wrong code! try again");
-            }
-        }
-
-    })
-</script>
+<script src="./js/konami.js"></script>
 </body>
 </html>
