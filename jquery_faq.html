@@ -16,8 +16,9 @@
     .invisible {
         transform: translateX(-20px);
         opacity: 0;
+        /*display: none;   -this collapses the questions like i want. but that changes the click area and that isn't pleasant*/
         visibility: hidden;
-        transition: 1s, visibility 0s 2s, opacity 2s linear;
+        transition: .5s, visibility 0s .5s, opacity .5s linear;
     }
     .hilite{
         background-color: yellow;
@@ -105,7 +106,7 @@ dd.addClass("invisible");
 
 
     $(dt).click(function(){
-        $("*").removeClass("active");
+        $("*").removeClass("active hilite");
         $(this).toggleClass("active hilite");
         $(this).next("dd").toggleClass("invisible visible hilite");
         // $(this).next("dd").toggleClass("invisible hilite");
