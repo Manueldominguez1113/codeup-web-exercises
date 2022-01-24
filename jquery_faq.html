@@ -7,12 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FAQs Jquery</title>
 <style>
+    .visible{
+        transform: translateX(0px);
+        visibility: visible;
+        opacity: 1;
+        transition: .5s, opacity .5s linear;
+    }
     .invisible {
+        transform: translateX(-20px);
+        opacity: 0;
         visibility: hidden;
+        transition: 1s, visibility 0s 2s, opacity 2s linear;
     }
     .hilite{
         background-color: yellow;
+        transform: scaleX(1);
+        transition: ease-in;
     }
+    .active{
+        transform: translateX(20px);
+        transition: .5s;
+    }
+    dt{
+        transform: translateX(0);
+       transition: .5s;
+    }
+
 </style>
 </head>
 <body>
@@ -85,9 +105,10 @@ dd.addClass("invisible");
 
 
     $(dt).click(function(){
-        $("*").removeClass("hilite");
-        $(this).toggleClass("hilite");
-        $(this).next("dd").toggleClass("invisible hilite");
+        $("*").removeClass("active");
+        $(this).toggleClass("active hilite");
+        $(this).next("dd").toggleClass("invisible visible hilite");
+        // $(this).next("dd").toggleClass("invisible hilite");
 //            added next to make only the description of the clicked element reveal AND hilite.
 /*    if(dd.hasClass("invisible")) {     does same thing but more typing.
         dd.removeClass("invisible");
