@@ -12,6 +12,7 @@
         visibility: visible;
         opacity: 1;
         transition: .5s, opacity .5s linear;
+
     }
     .invisible {
         transform: translateX(-20px);
@@ -23,7 +24,7 @@
     .hilite{
         background-color: yellow;
         transform: scaleX(1);
-        transition: ease-in;
+
     }
     .active{
         transform: translateX(20px);
@@ -33,7 +34,13 @@
         transform: translateX(0);
        transition: .5s;
     }
-
+    .bold{
+        font-weight: bold;
+    }
+    .pictureFrame{
+    display: flex;
+        flex-direction: row;
+    }
 </style>
 </head>
 <body>
@@ -90,6 +97,36 @@
 
 </dl>
 
+<h3>Yellowstone</h3>
+<ul id="Yellowstone">
+    <li> Yellowstone encompasses 3,472 square miles (2,221,766 acres) which makes it larger than Rhode Island and Delaware combined.</li>
+    <li>There are more than 10,000 hydrothermal features in Yellowstone. The four types of thermal features are geysers, hot springs, mud pots, and fumaroles.</li>
+    <li>Yellowstone is home to more than 500 active geysers (more than half the world’s geysers).</li>
+    <li>Yellowstone Lake has 131.7 sq. miles of surface area and 141 miles of shoreline. It is the largest high elevation lake in North America.</li>
+</ul>
+
+<h3>Death Valley</h3>
+<ul id="DeathValley">
+    <li>Death Valley is the lowest point in North America. At 282 feet below sea level.</li>
+    <li>Wildflowers bring life to the desert.</li>
+    <li>Some of the rocks move on their own at Death Valley.</li>
+    <li>If you listen closely, the sands will sing to you.</li>
+</ul>
+<h3>Big Bend</h3>
+<ul id="bigBend">
+    <li>Big Bend National Park covers a total area of 801,163 acres</li>
+    <li>The number of people visiting Big Bend in 2019 was 463,832 (All Years)</li>
+    <li>Big Bend was made a national park on June 20, 1935</li>
+    <li>The lowest elevation found in Big Bend is 1,715 feet at the Rio Grande River</li>
+</ul>
+<button id="btn1">Highlight the last list item!</button>
+<div id="pictures" class="pictureFrame">
+<div id="pic1" ><img src="./assets/Beach_water_stock.jpg" alt="water" width="400" height="400"> <button id="btn2">swap the images</button></div>
+<div id="pic2" ><img src="./assets/Computer_work_stock.jpg" alt="computer" width="400" height="400"> <button id="btn3">swap the images</button></div>
+<div id="pic3" ><img src="./assets/Teaching_stock.jpg" alt="teaching" width="400" height="400"><button id="btn4">swap the images</button></div>
+</div>
+
+
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
@@ -115,6 +152,61 @@ dd.addClass("invisible");
         dd.removeClass("invisible");
     } else dd.addClass("invisible");*/
 })
+
+$('#btn1').click(() =>{
+ $("#Yellowstone li").last().toggleClass('hilite');
+ $("#DeathValley li").last().toggleClass('hilite');
+ $("#bigBend li").last().toggleClass('hilite');
+})
+
+    $('h3').click(function(){
+        $(this).next().children().toggleClass("bold");
+    })
+
+    $('li').click(function(){
+        $(this).parent().children().first().css({"color": "blue"})
+    })
+
+    // bonus
+    let pic1,pic2,pic3;
+    pic1=$('#pic1')
+    pic2=$('#pic2')
+    pic3=$('#pic3')
+
+    $("#btn2").click(function(){
+        let newPic= pic2.children('img').attr("src")
+        let prevPic= $(this).siblings('img').attr("src")
+
+        /*new pic coming */     $(this).siblings('img').attr("src", newPic)
+        /*current pic moving*/  pic2.children('img').attr("src", prevPic)
+
+    })
+    $("#btn3").click(function(){
+        let prevPic= $(this).siblings('img').attr("src")
+       let coinflip= Math.floor(Math.random()*2)
+    if(coinflip === 0){
+        let newPic= pic1.children('img').attr("src")
+        let dir = "#pic1"
+        /*new pic coming */     $(this).siblings('img').attr("src", newPic)
+        /*current pic moving*/  pic1.children('img').attr("src", prevPic)
+    } else{
+        let newPic= pic3.children('img').attr("src")
+        let dir= "#pic3"
+        /*new pic coming */     $(this).siblings('img').attr("src", newPic)
+        /*current pic moving*/  pic3.children('img').attr("src", prevPic)
+    }
+
+
+
+    })
+
+    $("#btn4").click(function (){
+        let newPic= pic2.children('img').attr("src")
+        let prevPic= $(this).siblings('img').attr("src")
+
+        /*new pic coming */     $(this).siblings('img').attr("src", newPic)
+        /*current pic moving*/  pic2.children('img').attr("src", prevPic)
+    })
 
 </script>
 </body>
