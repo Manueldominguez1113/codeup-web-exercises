@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+    <title>Map api</title>
+</head>
+<body>
+<h1> my first mapbox!</h1>
+
+<div id="map" style="width: 100%; height: 700px"></div>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+    mapboxgl.accessToken = "pk.eyJ1IjoibW9vbW9vY3RodWxodSIsImEiOiJja3l2cXh2dXEwMTh0MnZ0ZHc1bnR0emd3In0.qpOXqwIy5Nrrqavwj509IA"
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        zoom: 9, // starting zoom
+        center: [-98.4916, 29.4252] // starting position [lng, lat]
+
+    });
+</script>
+</body>
+</html>
