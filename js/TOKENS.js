@@ -1,0 +1,1 @@
+const MAPBOX_CODE = "pk.eyJ1IjoibW9vbW9vY3RodWxodSIsImEiOiJja3l2cXh2dXEwMTh0MnZ0ZHc1bnR0emd3In0.qpOXqwIy5Nrrqavwj509IA"

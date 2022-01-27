@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet'/>
     <title>Map api</title>
 </head>
 <body>
@@ -15,16 +15,71 @@
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
 <script src="js/jquery-2.2.4.js"></script>
+<script src="js/TOKENS.js"></script>
 <script>
 
-    mapboxgl.accessToken = "pk.eyJ1IjoibW9vbW9vY3RodWxodSIsImEiOiJja3l2cXh2dXEwMTh0MnZ0ZHc1bnR0emd3In0.qpOXqwIy5Nrrqavwj509IA"
+    mapboxgl.accessToken = MAPBOX_CODE
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        zoom: 9, // starting zoom
-        center: [-98.4916, 29.4252] // starting position [lng, lat]
+        zoom: 13, // starting zoom
+        center: [-98.4833337, 29.3572817] // starting position [lng, lat]
 
     });
+
+let restraunts = [
+    {name:"Bill_Millers", location: [-98.504019, 29.3687964], info: "Bill millers is my favorite restuant!"},
+    {name:"Texas_Roadhouse", location: [-98.4493485, 29.3524618], info: "I like to go to Texas Roadhouse for the steaks"},
+    {name: "Olive_Garden", location: [-98.4384029, 29.3522525], info: "Olive garden is nice."}
+]
+    //bill miller [-98.504019, 29.3687964]
+    //   Texas roadhouse [-98.4493485, 29.3524618]
+    // Olive Garden [-98.4384029, 29.3522525]
+
+    restraunts.forEach(function(item){
+        let marker= new mapboxgl.Marker()
+        .setLngLat(item.location)
+        .addTo(map)
+
+
+        let popup = new mapboxgl.Popup()
+            .setLngLat(item.location)
+            .setHTML("<p>"+ item.info+ "</p>")
+        marker.setPopup(popup);
+
+    })
+
+/* wanted to visualize the markers and input id needed for each so i knew what i wanted to repeat and what is static
+    var billMarker = new mapboxgl.Marker()
+        .setLngLat([-98.504019, 29.3687964])
+        .addTo(map);
+
+    var billPopup = new mapboxgl.Popup()
+        .setLngLat([-98.504019, 29.3687964])
+        .setHTML("<p>Bill miller's is my favorite resturant!</p>")
+    billMarker.setPopup(billPopup)
+
+
+    var texasMarker = new mapboxgl.Marker()
+        .setLngLat([-98.4493485, 29.3524618])
+        .addTo(map);
+
+    var TexasPopup = new mapboxgl.Popup()
+        .setLngLat([-98.4493485, 29.3524618])
+        .setHTML("<p>Texas Roadhouse is my favorite resturant!</p>")
+    texasMarker.setPopup(TexasPopup)
+
+    var oliveMarker = new mapboxgl.Marker()
+        .setLngLat([-98.4384029, 29.3522525])
+        .addTo(map);
+
+    var OlivePopup = new mapboxgl.Popup()
+        .setLngLat([-98.4384029, 29.3522525])
+        .setHTML("<p>Olive Garden is my favorite resturant!</p>")
+    oliveMarker.setPopup(OlivePopup)
+*/
+
+
 </script>
 </body>
 </html>
