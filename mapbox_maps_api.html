@@ -7,6 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet'/>
     <title>Map api</title>
+<style>
+    #geoInput{
+        margin-left: 200px;
+    }
+</style>
 </head>
 <body>
 <h1> my first mapbox!</h1>
@@ -20,12 +25,14 @@
         <option value="20">20</option>
     </select>
 <label for="geoInput"></label>
-<input id="geoInput" type="text" placeholder="name a location">
+<input id="geoInput" type="text" placeholder="name a location"> <button id="submitLocation">Submit</button>
+<button id="hideAll">Hide all markers</button>
 <div id="map" style="width: 100%; height: 700px"></div>
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/TOKENS.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script>
     mapboxgl.accessToken = MAPBOX_CODE   // 'gitignored' personal token.
     const map = new mapboxgl.Map({
@@ -62,6 +69,41 @@ let restraunts = [
         marker.setPopup(popup);
 
     })
+
+ $("#submitLocation").click(function(){
+     let input= $("#geoInput").val()
+     geocode(input, MAPBOX_CODE).then(function(coordinates){
+         let popup = new mapboxgl.Popup()
+             .setHTML(input);
+         let marker = new mapboxgl.Marker()
+             .setLngLat(coordinates)
+             .addTo(map)
+             .setPopup(popup);
+         popup.addTo(map);
+         map.setCenter(coordinates)
+         map.setZoom(16);
+     });
+ })
+
+/* hide all function in the works. need to change clickedlayer into all the markers by id. might need to change into a foreach.git
+    $("#hideAll").onclick = function (e) {
+        const clickedLayer = this.textContent;
+        e.preventDefault();
+        e.stopPropagation();
+
+        const visibility = map.getLayoutProperty(
+            clickedLayer,
+            'visibility'
+        );
+    }
+// Toggle layer visibility by changing the layout object's visibility property.
+        if (visibility === 'visible') {
+            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+            this.className = '';
+        } else {
+            this.className = 'active';
+            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+        }*/
 
 /* wanted to visualize the markers and input id needed for each so i knew what i wanted to repeat and what is static
     var billMarker = new mapboxgl.Marker()
