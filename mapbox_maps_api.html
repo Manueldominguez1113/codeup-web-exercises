@@ -11,13 +11,22 @@
 <body>
 <h1> my first mapbox!</h1>
 
+<label for="zoom">Zoom Level:</label>
+    <select  id="zoom" onchange="updateZoom();">
+        <option value="5">5</option>
+        <option value="13" selected>13</option>
+        <option value="15">15</option>
+        <option value="18">18</option>
+        <option value="20">20</option>
+    </select>
+<label for="geoInput"></label>
+<input id="geoInput" type="text" placeholder="name a location">
 <div id="map" style="width: 100%; height: 700px"></div>
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/TOKENS.js"></script>
 <script>
-
     mapboxgl.accessToken = MAPBOX_CODE   // 'gitignored' personal token.
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -26,11 +35,16 @@
         center: [-98.4833337, 29.3572817] // starting position [lng, lat]
 
     });
+function updateZoom() {
+    map.setZoom($("#zoom").val());
+    console.log(map.zoom)
+}
+
 
 let restraunts = [
-    {name:"Bill_Millers", location: [-98.504019, 29.3687964], info: "Bill millers is my favorite restuant!"},
-    {name:"Texas_Roadhouse", location: [-98.4493485, 29.3524618], info: "I like to go to Texas Roadhouse for the steaks"},
-    {name: "Olive_Garden", location: [-98.4384029, 29.3522525], info: "Olive garden is nice."}
+    {name:"Bill Millers", location: [-98.504019, 29.3687964], info: "Bill millers is my favorite restuant!", picture: "./assets/billmillfood1.png"},
+    {name:"Texas Roadhouse", location: [-98.4493485, 29.3524618], info: "I like to go to Texas Roadhouse for the steaks", picture: "./assets/texas_roadhouse.png"},
+    {name: "Olive Garden", location: [-98.4384029, 29.3522525], info: "Olive garden is nice.", picture: "./assets/olive_garden.png"}
 ]
     //bill miller [-98.504019, 29.3687964]
     //   Texas roadhouse [-98.4493485, 29.3524618]
@@ -44,7 +58,7 @@ let restraunts = [
 
         let popup = new mapboxgl.Popup()
             .setLngLat(item.location)
-            .setHTML("<p>"+ item.info+ "</p>")
+            .setHTML("<h2>"+item.name+"</h2><p>"+ item.info+ "</p><img src="+item.picture+" alt="+item.name+" width='200px' height='200px'>")
         marker.setPopup(popup);
 
     })
