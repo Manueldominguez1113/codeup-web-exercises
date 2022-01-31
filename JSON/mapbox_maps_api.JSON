@@ -1,0 +1,30 @@
+[
+    {
+      "type": "restaurant",
+      "coordinates": [-98.504019, 29.3687964],
+      "properties": {
+        "name": "Bill Millers",
+        "info": "Bill millers is my favorite restaurant!",
+        "picture": "./assets/billmillfood1.png"
+      }
+    },
+    {
+      "type": "restaurant",
+      "coordinates": [-98.4493485, 29.3524618],
+      "properties": {
+        "name": "Texas Roadhouse",
+        "info": "I like to go to Texas Roadhouse for the steaks",
+        "picture": "./assets/texas_roadhouse.png"
+      }
+    },
+    {
+      "type": "restaurant",
+      "coordinates": [-98.4384029, 29.3522525],
+      "properties": {
+    "name": "Olive Garden",
+      "info": "Olive garden is nice.",
+      "picture": "./assets/olive_garden.png"
+    }
+    }
+  ]
+

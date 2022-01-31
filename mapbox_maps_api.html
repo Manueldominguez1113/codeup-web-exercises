@@ -11,6 +11,14 @@
     #geoInput{
         margin-left: 200px;
     }
+    .marker{
+    background-image: url("./assets/restaurant.icon.png");
+        background-size: cover;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
 </style>
 </head>
 <body>
@@ -47,39 +55,55 @@ function updateZoom() {
     console.log(map.zoom)
 }
 
+/*need to turn this into a separate, GEOJSON file.*/
+/*
+let allRestaurants = $.ajax("./JSON/mapbox_maps_api.JSON").done(function(data) {
 
-let restraunts = [
+    for (const restaurant of data) {
+
+        let ele = document.createElement('div');
+        ele.ClassName = "marker";
+        let marker = new mapboxgl.Marker(ele).setLngLat(restaurant.coordinates).addTo(map);
+        let popup = new mapboxgl.Popup().setLngLat(restaurant.coordinates).setHTML("<h2>" +restaurant.properties.name + "</h2><p>" + restaurant.properties.info + "</p><img src=" + restaurant.properties.picture + " alt=" + restaurant.properties.name + " width='200px' height='200px'>");
+        marker.setPopup(popup);
+    }
+})
+*/
+
+  let restaurants= [
     {name:"Bill Millers", location: [-98.504019, 29.3687964], info: "Bill millers is my favorite restuant!", picture: "./assets/billmillfood1.png"},
     {name:"Texas Roadhouse", location: [-98.4493485, 29.3524618], info: "I like to go to Texas Roadhouse for the steaks", picture: "./assets/texas_roadhouse.png"},
     {name: "Olive Garden", location: [-98.4384029, 29.3522525], info: "Olive garden is nice.", picture: "./assets/olive_garden.png"}
-]
+    ]
+
+
     //bill miller [-98.504019, 29.3687964]
     //   Texas roadhouse [-98.4493485, 29.3524618]
     // Olive Garden [-98.4384029, 29.3522525]
 
-    restraunts.forEach(function(item){
-        let marker= new mapboxgl.Marker()
-        .setLngLat(item.location)
-        .addTo(map)
+ // used to make markers in loop when it was just an array.
 
+            restaurants.forEach(function(item) {
+                let el = document.createElement('div');
+                el.className = "marker";
 
-        let popup = new mapboxgl.Popup()
-            .setLngLat(item.location)
-            .setHTML("<h2>"+item.name+"</h2><p>"+ item.info+ "</p><img src="+item.picture+" alt="+item.name+" width='200px' height='200px'>")
-        marker.setPopup(popup);
+                let marker = new mapboxgl.Marker(el)
+                    .setLngLat(item.location)
+                    .setPopup(
+                        new mapboxgl.Popup()
+                            .setLngLat(item.location)
+                            .setHTML("<h2>" + item.name + "</h2><p>" + item.info + "</p><img src=" + item.picture + " alt=" + item.name + " width='200px' height='200px'>")
+                    )
+                    .addTo(map)
+            });
 
-    })
 
  $("#submitLocation").click(function(){
      let input= $("#geoInput").val()
      geocode(input, MAPBOX_CODE).then(function(coordinates){
-         let popup = new mapboxgl.Popup()
-             .setHTML(input);
-         let marker = new mapboxgl.Marker()
-             .setLngLat(coordinates)
-             .addTo(map)
-             .setPopup(popup);
-         popup.addTo(map);
+
+         let marker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map).setPopup(new mapboxgl.Popup().setHTML(input));
+
          map.setCenter(coordinates)
          map.setZoom(16);
      });
@@ -134,7 +158,6 @@ let restraunts = [
         .setHTML("<p>Olive Garden is my favorite resturant!</p>")
     oliveMarker.setPopup(OlivePopup)
 */
-
 
 </script>
 </body>
