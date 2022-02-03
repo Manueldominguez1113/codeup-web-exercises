@@ -1,8 +1,10 @@
 //submit functions.moved to top for calling purposes.
+let load = $(".loads")
 let long = document.getElementById("longFindMe");
 let lati = document.getElementById("latFindMe");
 let locationName;
 
+load.toggle() //to start at off
 // unnecessary. completed with mapbox geocoding
 /*function searchName(arr) {
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(arr)}&appid=${WEATHER_CODE}`).then((f)=> {
@@ -16,6 +18,7 @@ let locationName;
 
 
 function nameSearch(boolean,) {
+
     let input = document.getElementById("findMe").value
     geocode(input, MAPBOX_CODE).then(function (coordinates) {
         long.value = coordinates[0]
@@ -53,10 +56,12 @@ function LLSearch() {
 // working weather code below. just need to .map() for each desired input and need to thread into my mapbox functions....
 
 function weatherSetup() {
+    load.toggle()
     let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lati.value}&lon=${long.value}&units=imperial&appid=${WEATHER_CODE}`
     console.log(url);
     fetch(url)
         .then((f) => {
+            load.toggle()
             if (!(f.ok)) {
                 throw new Error(f.statusText)
             }
@@ -65,7 +70,10 @@ function weatherSetup() {
 
         .then((weather) => {
             weatherApp(weather)
-        }).catch(console.error)
+        })
+        .catch(console.error)
+
+
 }
 
 function weatherApp(weather) {
@@ -88,8 +96,8 @@ function weatherApp(weather) {
                 </div>
                 <div class="w-100"></div>
                 <div class="col row p-0 m-0">
-                <p class="card-text col-6 p-0">high <br>${day.temp.max}\xB0F </p>
-                <p class="card-text col-6 p-0"> low <br>${day.temp.min}\xB0F</p></div>
+                <p class="card-text col-6 p-0">High <br>${day.temp.max}\xB0F </p>
+                <p class="card-text col-6 p-0"> Low <br>${day.temp.min}\xB0F</p></div>
                 <div class="w-100"></div>
                 <p class="card-text col-5 m-0">Feels like:<br> ${day.feels_like.day}\xB0F</p>
                 <p class="card-text col-5 m-0">Humidity: <br>${day.humidity}%</p>
@@ -98,11 +106,11 @@ function weatherApp(weather) {
                 <p class="card-text col-5 m-0 text-nowrap">Precipitation: <br>${(day.pop * 100).toFixed(0)}%</p>
                 <div class="w-100 my-2"></div>
                 <div class="col row m-0 text-center justify-content-between">
-                <p class="card-text col-6 m-0">wind: <br>${day.wind_speed}Mph </p>
-                <p class="card-text col-6 m-0">heading: <br>${day.wind_deg}\xB0</p></div>
+                <p class="card-text col-6 m-0">Wind: <br>${day.wind_speed}Mph </p>
+                <p class="card-text col-6 m-0">Heading: <br>${day.wind_deg}\xB0</p></div>
                 <div class="w-100 my-2"></div>
-                <p class="card-text col-5 m-0">sunrise:<br> ${sr}</p>
-                <p class="card-text col-5 m-0">sunset:<br> ${ss}</p>
+                <p class="card-text col-5 m-0">Sunrise:<br> ${sr}</p>
+                <p class="card-text col-5 m-0">Sunset:<br> ${ss}</p>
             </div>
         </div>
     </div>`
@@ -119,7 +127,7 @@ function weatherApp(weather) {
 mapboxgl.accessToken = MAPBOX_CODE;
 const map = new mapboxgl.Map({
     container: "map",
-    style: "mapbox://styles/mapbox/light-v10",
+    style: "mapbox://styles/mapbox/dark-v10",
     center: [-98.50, 29.42],
     zoom: "7"
 });
