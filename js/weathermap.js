@@ -2,6 +2,7 @@
 let long = document.getElementById("longFindMe");
 let lati = document.getElementById("latFindMe");
 let locationName;
+
 function nameSearch(boolean) {
     let input = $("#findMe").val()
     geocode(input, MAPBOX_CODE).then(function (coordinates) {
@@ -33,16 +34,16 @@ function LLSearch(boolean, after) {
         document.getElementById("findMe").value = "location unknown";
         let popup = new mapboxgl.Popup().setLngLat(array).setHTML("<button id='popupBtn'> Location Unknown </button>").addTo(map)
     })
-/*    map.flyTo({
-        center: array,
-        bearing: 0,
-        curve: 1,
-        speed: 2,
-        easing: (t) => t,
-        essential: true
-    });
-    if (boolean === true) map.flyTo = +{zoom: 14}
-*/
+    /*    map.flyTo({
+            center: array,
+            bearing: 0,
+            curve: 1,
+            speed: 2,
+            easing: (t) => t,
+            essential: true
+        });
+        if (boolean === true) map.flyTo = +{zoom: 14}
+    */
 }
 
 // direct geocode to find weather api's coordinates and everything else needed. but with mapbox geocoding.. all this does is get the city name..
@@ -60,63 +61,73 @@ function weatherSetup() {
     console.log(url);
     fetch(url)
         .then((f) => {
-            if(!(f.ok)){ throw new Error(f.statusText) }
-        return f.json()
+            if (!(f.ok)) {
+                throw new Error(f.statusText)
+            }
+            return f.json()
         })
 
         .then((weather) => {
-        weatherApp(weather)
-}).catch(console.error)
+            weatherApp(weather)
+        }).catch(console.error)
 }
 
-function weatherApp (weather){
+function weatherApp(weather) {
 
     const date = new Date(weather.daily[0].dt * 1000)
     let today = date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()
     // works but want 7 days of content. commented out and will strip apart for the important info.
+    let forecast = document.getElementById("forecast");
+    forecast.innerHTML = weather.daily
+        .map((day, ind) => {
+            if (ind <= 4) {
+            let dt = new Date(day.dt * 1000); //js timestamp is *1000
+            let sr = new Date(day.sunrise * 1000).toTimeString();
+            let ss = new Date(day.sunset * 1000).toTimeString();
 
-    $("#forecast").innerHTML = weather.daily
-        .map((day,index)=>{
-            if(index<= 7) {
-                return day
-            }
-        })
-    /*  "<h3>" +
-      today
-      + " <br>now: " + weather.current.temp + " F <br>" +
-      " feels like " + weather.current.feels_like + " F <br>" +
-      " high " + weather.daily[0].temp.max + " mph <br>" +
-      "low " + weather.daily[0].temp.min + " mph <br>" +
-      "Winds at " + weather.current.wind_speed + " mph, heading " + weather.current.wind_deg + " Deg<br>" +
-      "Gust " + weather.current.wind_gust + "<br>" +
-      "humidity " + weather.current.humidity + "<br>" +
-      "pressure " + weather.current.pressure + "<br>" +
-      weather.current.dew_point
-
-      + "</h3> "*/
-let html= `<div class="col">
-        <div class="card" style="width:30vw">
-            <h5 class="card-title pt2">Date</h5>
-            <img src="http://openweathermap.org/img/w/10d@4x.png" alt="weather_icon">
+                return `<div class="col">
+            <div class="card" style="width:30vw">
+            <h5 class="card-title pt2">${dt.toDateString()}</h5>
+            <img src="http://openweathermap.org/img/w/${day.weather[0].icon}.png" alt=${day.weather[0].description}>
             <div class="card-body">
-                <h3 class="card-title">weather label</h3>
-                <p class="card-text">high temp low temp</p>
-                <p class="card-text">feels like</p>
-                <p class="card-text">pressure</p>
-                <p class="card-text">humidity</p>
-                <p class="card-text">uv index</p>
-                <p class="card-text">precipitation</p>
-                <p class="card-text">dew point</p>
-                <p class="card-text">wind speed and direction</p>
-                <p class="card-text">sunrise</p>
-                <p class="card-text">sunset</p>
+                <h3 class="card-title">${day.weather[0].main}</h3>
+                <p class="card-text">high ${day.temp.max} low ${day.temp.min}</p>
+                <p class="card-text">feels like ${day.feels_like.day}</p>
+                <p class="card-text">pressure: ${day.pressure}</p>
+                <p class="card-text">humidity: ${day.humidity}</p>
+                <p class="card-text">uvi: ${day.uvi}</p>
+                <p class="card-text">precipitation ${(day.pop *100).toFixed(0)}%</p>
+                <p class="card-text">Dewpoint: ${day.dew_point}</p>
+                <p class="card-text">wind speed: ${day.wind_speed} heading ${day.wind_direction}</p>
+                <p class="card-text">sunrise: ${sr}</p>
+                <p class="card-text">sunset: ${ss}</p>
             </div>
         </div>
     </div>`
+            }
 
+        })
+        .join(" ")
 
-    console.log("done")
 }
+
+/*  "<h3>" +
+  today
+  + " <br>now: " + weather.current.temp + " F <br>" +
+  " feels like " + weather.current.feels_like + " F <br>" +
+  " high " + weather.daily[0].temp.max + " mph <br>" +
+  "low " + weather.daily[0].temp.min + " mph <br>" +
+  "Winds at " + weather.current.wind_speed + " mph, heading " + weather.current.wind_deg + " Deg<br>" +
+  "Gust " + weather.current.wind_gust + "<br>" +
+  "humidity " + weather.current.humidity + "<br>" +
+  "pressure " + weather.current.pressure + "<br>" +
+  weather.current.dew_point
+
+  + "</h3> "*/
+
+
+console.log("done")
+
 
 mapboxgl.accessToken = MAPBOX_CODE;
 const map = new mapboxgl.Map({
