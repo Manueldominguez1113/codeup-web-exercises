@@ -12,24 +12,30 @@
     <link rel="stylesheet" href="./css/weathermap.css">
 </head>
 <body>
-<h1>welcome to the bare-bones</h1>
-<input type="text" id="findMe" placeholder="Enter a location!">
-<button id="submitMe">Submit</button>
-<div id="container">
-    <h4>if you know the coordinates, enter here, <u>or you can just click on the map!</u></h4>
-    <input type="text" id="longFindMe" placeholder="Longitude">
-    <input type="text" id="latFindMe" placeholder="Latitude">
-    <button id="llSubmitMe">Submit</button>
+<div class="mainMap">
+    <h1 class="text-center"> Manuel's weather api!</h1>
+
+
+<div class="container text-center row justify-content-between text-nowrap m-auto pl-0">
+    <h4 class="col-12"> Click on the map for geographic information, <u>double click for weather!</u></h4>
+    <div id="address" class="col-3"><label for="findMe">Address: </label><input type="text" id="findMe" placeholder="Enter a location!">
+        <button id="submitMe">Submit</button></div>
+    <div id="long" class="col-3"><label for="longFindMe">Longitude: </label><input type="text" id="longFindMe" placeholder="Longitude"></div>
+    <div id="lata" class="col-3"><label for="latFindMe">Latitude: </label><input type="text" id="latFindMe" placeholder="Latitude"></div>
+
 </div>
 <div id="map" class="container"></div>
-<pre id="info"></pre>
-<pre id="snapshot"></pre>
+<div class="infobox"><pre id="info"></pre>
+    <!--<pre id="snapshot"></pre>--></div>
+</div>
 
-<h1 id="location"></h1>
+<h2 id="location" class="text-center"></h2>
+
 <weather id="forecast" class="flex-container row align-content-center justify-content-center">
 </weather>
 
 
+<script type="text/javascript" src="./js/Vanilla-tilt.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script src="./js/TOKENS.js"></script>
 <script src="./js/jquery-2.2.4.js"></script>
