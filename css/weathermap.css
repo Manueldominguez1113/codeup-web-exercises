@@ -15,7 +15,7 @@ body .mapboxgl-popup-content{
 .popup-input{
     padding: 15px;
     background-color: navajowhite;
-    border-radius: 40%;
+    border-radius: 50%;
 }
 .mapboxgl-popup-content{
     background: none;

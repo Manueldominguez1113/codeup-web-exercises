@@ -3,12 +3,24 @@ let long = document.getElementById("longFindMe");
 let lati = document.getElementById("latFindMe");
 let locationName;
 
-function nameSearch(boolean) {
-    let input = $("#findMe").val()
+// unnecessary. completed with mapbox geocoding
+/*function searchName(arr) {
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(arr)}&appid=${WEATHER_CODE}`).then((f)=> {
+        return f.json()
+    }).then(function (geo) {
+        let loc = document.getElementById("location");
+            loc.innerHTML = "Showing weather for: " + geo[0];
+        console.log(geo);
+    })
+}*/
+
+
+function nameSearch(boolean, ) {
+    let input = document.getElementById("findMe").value
     geocode(input, MAPBOX_CODE).then(function (coordinates) {
         long.value = coordinates[0]
         lati.value = coordinates[1]
-        let popup = new mapboxgl.Popup().setLngLat(coordinates).setHTML(input).addTo(map)
+        let pop =new mapboxgl.Popup().setLngLat(coordinates).setHTML("<div class='popup-input'>"+input+"</div>").addTo(map)
         if (boolean === true) {
             map.flyTo({
                 center: coordinates,
@@ -23,36 +35,19 @@ function nameSearch(boolean) {
     })
 }
 
-function LLSearch(boolean, after) {
+function LLSearch() {
     let array = {lng: long.value, lat: lati.value}
 
-    reverseGeocode(array, MAPBOX_CODE).then(function (coordinates) {
-        document.getElementById("findMe").value = coordinates
-        locationName = coordinates
-        let popup = new mapboxgl.Popup().setLngLat(array).setHTML("<button id='popupBtn'>" + locationName + "</button>").addTo(map)
+    reverseGeocode(array, MAPBOX_CODE).then(function (address) {
+        document.getElementById("findMe").value = address
+        locationName = address
+        console.log(address)
+        new mapboxgl.Popup().setLngLat(array).setHTML("<button id='popupBtn'>" + locationName + "</button>").addTo(map)
     }, () => {
         document.getElementById("findMe").value = "location unknown";
         let popup = new mapboxgl.Popup().setLngLat(array).setHTML("<button id='popupBtn'> Location Unknown </button>").addTo(map)
     })
-    /*    map.flyTo({
-            center: array,
-            bearing: 0,
-            curve: 1,
-            speed: 2,
-            easing: (t) => t,
-            essential: true
-        });
-        if (boolean === true) map.flyTo = +{zoom: 14}
-    */
 }
-
-// direct geocode to find weather api's coordinates and everything else needed. but with mapbox geocoding.. all this does is get the city name..
-// is it still relevant?
-
-/*$.ajax(`https://api.openweathermap.org/geo/1.0/direct?q=San_antonio&limit=5&appid=`+WEATHER_CODE).done(function(geo){
-    $("#location").append(geo[0].name);
-    console.log(geo);
- })*/
 
 // working weather code below. just need to .map() for each desired input and need to thread into my mapbox functions....
 
@@ -74,9 +69,6 @@ function weatherSetup() {
 
 function weatherApp(weather) {
 
-    const date = new Date(weather.daily[0].dt * 1000)
-    let today = date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()
-    // works but want 7 days of content. commented out and will strip apart for the important info.
     let forecast = document.getElementById("forecast");
     forecast.innerHTML = weather.daily
         .map((day, ind) => {
@@ -85,8 +77,8 @@ function weatherApp(weather) {
             let sr = new Date(day.sunrise * 1000).toTimeString();
             let ss = new Date(day.sunset * 1000).toTimeString();
 
-                return `<div class="col">
-            <div class="card" style="width:30vw">
+                return `<div class="col-2 m-2">
+            <div class="card">
             <h5 class="card-title pt2">${dt.toDateString()}</h5>
             <img src="http://openweathermap.org/img/w/${day.weather[0].icon}.png" alt=${day.weather[0].description}>
             <div class="card-body">
@@ -111,24 +103,6 @@ function weatherApp(weather) {
 
 }
 
-/*  "<h3>" +
-  today
-  + " <br>now: " + weather.current.temp + " F <br>" +
-  " feels like " + weather.current.feels_like + " F <br>" +
-  " high " + weather.daily[0].temp.max + " mph <br>" +
-  "low " + weather.daily[0].temp.min + " mph <br>" +
-  "Winds at " + weather.current.wind_speed + " mph, heading " + weather.current.wind_deg + " Deg<br>" +
-  "Gust " + weather.current.wind_gust + "<br>" +
-  "humidity " + weather.current.humidity + "<br>" +
-  "pressure " + weather.current.pressure + "<br>" +
-  weather.current.dew_point
-
-  + "</h3> "*/
-
-
-console.log("done")
-
-
 mapboxgl.accessToken = MAPBOX_CODE;
 const map = new mapboxgl.Map({
     container: "map",
@@ -136,7 +110,6 @@ const map = new mapboxgl.Map({
     center: [-98.50, 29.42],
     zoom: "7"
 });
-
 
 // mouse moving and click functions
 map.on('mousemove', (e) => {
@@ -148,8 +121,7 @@ map.on('click', (e) => {
     let array = e.lngLat.toArray();
     long.value = array[0].toFixed(2);
     lati.value = array[1].toFixed(2);
-
-    LLSearch(false)
+    LLSearch(true);
     document.getElementById("snapshot").innerHTML = "<b>KA-CLICK! you're full coordinates:</b><br>" +
         " longitude: " + array[0] + "<br> latitude: " + array[1];
 });
