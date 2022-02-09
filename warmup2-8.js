@@ -1,4 +1,4 @@
-let array = ["phone", "watch", "phone", "camera", "camera", "phone"]
+let array = [2,3,5,8,3,1,2,6,3,2,7,8,2,4,7]
 let newArray= []
 function onceOver(input){
     return input.filter((n)=>{
