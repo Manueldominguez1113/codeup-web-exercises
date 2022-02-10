@@ -28,3 +28,4 @@ newerArray.sort((a,b)=>a-b)
     return newerArray;
 }
 console.log(onceOverAndSort(sorrtArray));
+//

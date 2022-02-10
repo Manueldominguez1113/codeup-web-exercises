@@ -4,7 +4,7 @@ let long = document.getElementById("longFindMe");
 let lati = document.getElementById("latFindMe");
 let locationName;
 
- load.toggle() //to start at off
+ // load.toggle() //to start at off
 
 // unnecessary. completed with mapbox geocoding
 /*function searchName(arr) {
