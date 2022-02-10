@@ -1,8 +1,10 @@
 // write a function that counts the number of duplicate characters.
 let  input= "adsjfdsfsfjsdjfhacabcsbajda"
 // expected output: { a: 5, b: 2, c: 2, d: 4, f: 4, j: 4, s: 5 }
+
  function dups (input){
 let newArray = input.split('');
+     // newArray.sort((a,b)=>a-b)
 let newObj={}
      let count={};
    newArray.map((ltr)=> {
@@ -15,7 +17,10 @@ let newObj={}
 
      return newObj
 }
+
 console.log(dups(input))
+
+
 
 let sorrtArray = [1, 12, 2, 33, 28, 5, 45, 12, 1, 42, 42, 5];
 function onceOverAndSort(input){
