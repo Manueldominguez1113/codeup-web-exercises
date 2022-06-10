@@ -100,7 +100,7 @@ body{
     background: linear-gradient(45deg,transparent,
     transparent 40%, #ff0000);
     z-index: 2;
-    animation: animate .2s linear infinite;
+    animation: animate .4s linear infinite;
 }
 @keyframes animate {
     0%{
